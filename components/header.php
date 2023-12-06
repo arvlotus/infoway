@@ -22,7 +22,7 @@ function isActivepage($currentPage, $pageName)
   <link rel="stylesheet" href="./css/infoway.css">
 </head>
 
-<nav class="navbar navbar-expand-lg bg-custom">
+<nav class="navbar navbar-expand-lg bg-custom mb-5">
   <div class="container">
     <a class="navbar-brand" href="index.php">
       <img src="css/Infoway/INFORWAY.PNG" alt="logoinfo" width="50" height="50">

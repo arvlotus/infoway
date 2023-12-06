@@ -5,12 +5,19 @@ include_once(__DIR__ . '/components/header.php');
 
 <section class="iniciofundo">
 <main class="container">
-    <h1 class="text-center mt-3 mb-1">Pagina Inicial</h1>
-    <small class="form-text text-muted ">
-      <h4 class="text-center mb-4">Cursos mais acessados no momento:</h4>
-    </small>
-  </main>
+<div class="textoinicial">
+<p>Bem-vindo ao nosso universo digital onde a inovação encontra a informação!<br> No coração do ciberespaço,
+          é com grande entusiasmo que recebemos você<br> em nosso site de informática, um espaço dedicado à descoberta
+          e ao aprimoramento constante.<br> Prepare-se para uma imersão no universo fascinante da informática,<br>
+          onde a cada clique uma nova porta se abre para possibilidades infinitas.<br> Estamos empolgados em tê-lo conosco nesta jornada eletrônica.</p>
+      <form class="form-inline my-2 my-lg-0">
+        <a class="btn btn-custom" href="register.php">
+          Junte-se a nós
+        </a>
+</div>
+</main>
 </section>
+
 
 <section class="carouselfundo">
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
