@@ -1,18 +1,19 @@
-.bg-custom{
+.bg-custom {
     background-color: rgb(36, 36, 36);
 }
 
-.collapse a{
+.collapse a {
     color: #fff;
 }
-.navbar-nav .nav-item .nav-link.active 
-{
+
+.navbar-nav .nav-item .nav-link.active {
     color: #fff;
 }
+
 .navbar-nav .nav-item .nav-link:hover {
     color: #ff9900;
     transition: color 0.3s;
-  }
+}
 
 
 .btn-custom:hover {
@@ -23,4 +24,27 @@
     background-color: #f4732a;
     color: #ffffff;
 
-  }
+}
+
+.container h4,h1{
+    color: #fff;
+}
+footer p{
+    color: #fff;
+}
+
+section.iniciofundo {
+   background-color: rgb(22, 22, 22);
+}
+section.carouselfundo {
+   background-color: rgb(22, 22, 22);
+}
+
+
+body {
+    background-image: url('../css/Infoway/fundocodes.jpg');
+    background-position: center;
+    background-size: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
