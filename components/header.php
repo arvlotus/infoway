@@ -22,10 +22,10 @@ function isActivepage($currentPage, $pageName)
   <link rel="stylesheet" href="./css/infoway.css">
 </head>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-custom">
   <div class="container">
     <a class="navbar-brand" href="index.php">
-      <img src="css/Infoway/INFORWAY.PNG" alt="logoinfo" width="90" height="90">
+      <img src="css/Infoway/INFORWAY.PNG" alt="logoinfo" width="50" height="50">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@ function isActivepage($currentPage, $pageName)
   <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">
+          <a class="nav-link active" href="index.php">
             Pagina Inicial
           </a>
         </li>
@@ -49,12 +49,12 @@ function isActivepage($currentPage, $pageName)
         </li>
       </ul>
       </div>
-      <div class="reglogin">
+      <div class="reglogin ml-auto">
       <form class="form-inline my-2 my-lg-0">
-        <a class="btn btn-warning" href="register.php">
+        <a class="btn btn-custom" href="register.php">
           Registre-se
         </a>
-        <a class="btn btn-warning" href="register.php">
+        <a class="btn btn-custom" href="register.php">
           Logar
         </a>
       </form>
