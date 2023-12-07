@@ -1,9 +1,8 @@
-.bg-custom {
-    background-color: rgb(36, 36, 36);
-}
+/* Navbar */
 
 .collapse a {
     color: #fff;
+    font-family: 'Staatliches', sans-serif;
 }
 
 .navbar-nav .nav-item .nav-link.active {
@@ -20,36 +19,65 @@
     background-color: #fccb83;
 }
 
+.bg-custom {
+    background-color: rgb(36, 36, 36);
+}
+
+/* Button do Main */
+
 .btn-custom {
     background-color: #f4732a;
     color: #ffffff;
+    font-family: 'Staatliches', sans-serif;
 
 }
+
+/* Cor das fontes do Main */
 
 .container h4,h1{
     color: #000;
 }
 
+.textinicial{
+   color: #000;
+}
+
+/* Footer */
+
 footer p.text-center{
     color: #fff;
 }
 
-section.iniciofundo {
-    background-color: rgb(36, 36, 36);
+/* Sections do Index */
+
+.textinicio2 h1{
+    color: #fff;
+    font-family: 'Staatliches', sans-serif;
 }
 
-.textoinicial{
-   color: #fff;
+
+.textinicio {
+    flex: 1;
+    padding: 1.5rem; 
+  }
+
+.imageinicio {
+    flex: 1 1 700px; 
+    padding: 1,5rem;
+  }
+
+.iniciofundo {
+    align-items: center;
+    display: flex;
+    background-color: #fff;
 }
-section.carouselfundo {
+.carouselfundo {
    background-color: #fff;
 }
 
+/* Index */
+
 
 body {
-    background-image: url('../css/Infoway/fundocodes.jpg');
-    background-position: center;
-    background-size: 1000px;
-    background-repeat: no-repeat;
-    background-size: cover;
+background-color: #612604;
 }
