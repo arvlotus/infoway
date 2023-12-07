@@ -29,8 +29,9 @@
 .container h4,h1{
     color: #000;
 }
-footer p{
-    color: #000;
+
+footer p.text-center{
+    color: #fff;
 }
 
 section.iniciofundo {
