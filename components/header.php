@@ -33,7 +33,7 @@ function isActivepage($currentPage, $pageName)
 <nav class="navbar navbar-expand-lg bg-custom mb-5">
   <div class="container">
     <a class="navbar-brand" href="index.php">
-      <img src="css/Infoway/INFORWAY.PNG" alt="logoinfo" width="50" height="50">
+      <img src="css/Infoway/INFORWAY.PNG" alt="logoinfo" width="55" height="50">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

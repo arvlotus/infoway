@@ -32,7 +32,21 @@
 
 }
 
-/* Cor das fontes do Main */
+
+
+/* Sobre */
+
+.textsobre h1 {
+    font-family: 'Staatliches', sans-serif;
+    color: #fff;
+}
+
+.containersobre{
+    background-color: #f4732a;
+}
+
+
+/* Cor das fontes do Index */
 
 .container h4,h1{
     color: #000;
