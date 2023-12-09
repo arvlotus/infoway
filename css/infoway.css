@@ -1,4 +1,7 @@
 /* Navbar */
+.navbar {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
 
 .collapse a {
     color: #fff;
@@ -57,14 +60,12 @@
     background-color: #f4732a;
 }
 .textsobre2 h1 {
+    
     font-family: 'Staatliches', sans-serif;
     color: #fff;
     background-color: #f4732a;
 }
 
-.containersobre{
-    
-}
 
 
 /* Cor das fontes do Index */
@@ -105,9 +106,11 @@
     align-items: center;
     display: flex;
     background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 .carouselfundo {
    background-color: #fff;
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Index */
@@ -115,4 +118,15 @@
 
 body {
 background-color: #612604;
+}
+
+/* Footer */
+
+footer.row{
+    text-align: center;
+}
+
+
+footer.bg-custom{
+    background-color: rgb(36, 36, 36);
 }

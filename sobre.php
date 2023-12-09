@@ -41,7 +41,7 @@ include_once(__DIR__ . '/components/header.php');
   </div>
     <section class="image">
       <div class="imgequipe justify-center">
-            <img src="css/Infoway/HTMLCSSJAVA.jpeg" alt="imgequipe" class="w-50">
+            <img src="css/Infoway/HTMLCSSJAVA.jpeg" alt="imgequipe" class="w-50" style="box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
           </div>
     </section>
 </div>
