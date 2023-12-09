@@ -36,13 +36,34 @@
 
 /* Sobre */
 
-.textsobre h1 {
-    font-family: 'Staatliches', sans-serif;
+.imgequipe {
+    text-align: center;
+}
+
+.paragrafos{
+    background-color: #c94508;
+    font-style: italic;
+    color: #fff;
+}
+.paragrafos2{
+    background-color: #c94508;
+    font-style: italic;
     color: #fff;
 }
 
-.containersobre{
+.textsobre h1 {
+    font-family: 'Staatliches', sans-serif;
+    color: #fff;
     background-color: #f4732a;
+}
+.textsobre2 h1 {
+    font-family: 'Staatliches', sans-serif;
+    color: #fff;
+    background-color: #f4732a;
+}
+
+.containersobre{
+    
 }
 
 
@@ -58,7 +79,7 @@
 
 /* Footer */
 
-footer p.text-center{
+.footer{
     color: #fff;
 }
 
