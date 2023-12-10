@@ -54,7 +54,10 @@ include_once(__DIR__ . '/components/header.php');
         <img src="css/Infoway/HTMLCSSJAVA.jpeg" class="d-block w-100" alt="imagen3">
       </div>
       <div class="carousel-item">
-        <img src="css/Infoway/INFORMATICABASICA.jpeg" class="d-block w-100" alt="imagen3">
+        <img src="css/Infoway/INFORMÁTICA BÁSICA.png" class="d-block w-100" alt="imagen3">
+      </div>
+      <div class="carousel-item">
+        <img src="css/Infoway/LÓGICA DE PROGRAMAÇÃO.png" class="d-block w-100" alt="imagen3">
       </div>
     </div>
   </div>
