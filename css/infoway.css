@@ -39,68 +39,86 @@
 
 /* Sobre */
 
-.imgequipe {
-    text-align: center;
+
+ .card{
+    width: 1000px;
+    background-color: #f4732a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    bottom: 20px;
 }
 
-.paragrafos{
-    background-color: #c94508;
+.card-equipe h1{
+    font-family: 'Staatliches', sans-serif;
+    color: #fff;
+}
+.card h1{
+    font-family: 'Staatliches', sans-serif;
+    color: #fff;
+}
+.card p{
+    font-size: large;
     font-style: italic;
     color: #fff;
 }
-.paragrafos2{
-    background-color: #c94508;
+.card-equipe p{
+    font-size: large;
     font-style: italic;
     color: #fff;
 }
 
-.textsobre h1 {
-    font-family: 'Staatliches', sans-serif;
-    color: #fff;
+.card-equipe {
+    width: 600px;
     background-color: #f4732a;
-}
-.textsobre2 h1 {
-    
-    font-family: 'Staatliches', sans-serif;
-    color: #fff;
-    background-color: #f4732a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    float: right;
 }
 
+.imagex {
+    padding: 20px;
+    flex: 1;
+
+}
 
 
 /* Cor das fontes do Index */
 
-.container h4,h1{
+.container h4,
+h1 {
     color: #000;
 }
 
-.textinicial{
-   color: #000;
+.textinicial {
+    color: #000;
 }
 
 /* Footer */
 
-.footer{
+.footer {
     color: #fff;
 }
 
 /* Sections do Index */
 
-.textinicio2 h1{
+.textinicio2 h1 {
     color: #fff;
     font-family: 'Staatliches', sans-serif;
 }
 
-
 .textinicio {
     flex: 1;
-    padding: 1.5rem; 
-  }
+    padding: 1.5rem;
+}
 
 .imageinicio {
-    flex: 1 1 700px; 
-    padding: 1,5rem;
-  }
+    flex: 1 1 700px;
+    padding: 1, 5rem;
+}
 
 .iniciofundo {
     align-items: center;
@@ -108,25 +126,77 @@
     background-color: #fff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+
 .carouselfundo {
-   background-color: #fff;
-   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+
+/* Cursos */
+
+.card-curs{
+    margin: auto;
+    justify-content: center;
+    background-color: rgb(36, 36, 36);
+    width: 400px;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.card-curs ul, li{
+    color: #fff;
+}
+.card-curs p{
+    text-align: center;
+    color: #fff;
+}
+.card-curs h4{
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    color: #f4732a;
+}
+
+
+.textcurso h1{
+    font-family: 'Staatliches', sans-serif;
+    color: #f4732a;
+}
+.textcurso{
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    width: 150px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+
 
 /* Index */
 
+.textinicio2 h1{
+    color: #f4732a;
+}
+.textinicio2{
+        margin: auto;
+        background-color: rgb(36, 36, 36);
+        width: 250px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
 
 body {
-background-color: #612604;
+    background-image: url('../css/Infoway/background.png');
 }
 
 /* Footer */
 
-footer.row{
+footer.row {
     text-align: center;
 }
 
 
-footer.bg-custom{
+footer.bg-custom {
     background-color: rgb(36, 36, 36);
 }

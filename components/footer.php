@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h5 class="mb-4">Redes Sociais</h5>
+                <h5 class="mb-4"><i class="bi bi-wifi"></i> Redes Sociais</h5>
                 <ul class="list-unstyled">
                     <li><a href="#" class="text-light"> <i class="bi bi-facebook"></i> Facebook</a></li>
                     <li><a href="#" class="text-light"> <i class="bi bi-twitter"></i> Twitter</a></li>
@@ -10,21 +10,22 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <h5 class="mb-4">Contato</h5>
+                <h5 class="mb-4"><i class="bi bi-person"></i> Contato</h5>
                 <p class="mb-1"><i class="bi bi-envelope-fill"></i> <a href="mailto:contato@infoway.com" class="text-light">contato@infoway.com</a></p>
                 <p><i class="bi bi-telephone-fill"></i> (404) 4002-8922</p>
             </div>
             <div class="col-md-4">
-                <h5 class="mb-4">Informações</h5>
-                <p class="small mb-1"><i class="fas fa-users"></i> Mais de X usuários</p>
-                <p class="small mb-1"><i class="fas fa-utensils"></i> Mais de Y receitas compartilhadas</p>
-                <p class="small"><i class="far fa-bookmark"></i> Mais de Z receitas salvas</p>
+                <h5 class="mb-4"><i class="bi bi-info-square"></i> Informações</h5>
+                <p class="small mb-1"><i class="fas fa-users"></i><i class="bi bi-people-fill"></i> Mais de X alunos</p>
+                <p class="small mb-1"><i class="fas fa-utensils"></i><i class="bi bi-building"></i> Acessoria disponives</p>
+                <p class="small mb-1"><i class="far fa-bookmark"></i><i class="bi bi-buildings"></i> Mais de 10 unidades no RJ</p>
+                <p class="small"><i class="far fa-bookmark"></i><i class="bi bi-patch-check"></i> Reconhecida pelo MEC</p>
             </div>
         </div>
 <footer class="mt-5 mb-2">
     <div class="footer">
-    <p class="text-center">
-        Infoway. Todos os direitos reservados
+    <p class="text-center"><i class="bi bi-pc-display"></i>
+        Infoway. © Todos os direitos reservados
     </p>
     </div>
 </footer>
