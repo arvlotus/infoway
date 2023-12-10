@@ -1,6 +1,6 @@
 <?php
 $currentPage = 'sobre';
-include_once(__DIR__ . '/components/header.php');
+include_once(__DIR__ . '/components/public/header.php');
 ?>
 
 <!-- Sobre -->
@@ -45,5 +45,5 @@ include_once(__DIR__ . '/components/header.php');
 </div>
 
 <?php
-include_once(__DIR__ . '/components/footer.php');
+include_once(__DIR__ . '/components/public/footer.php');
 ?>

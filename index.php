@@ -1,6 +1,6 @@
 <?php
 $currentPage = 'index';
-include_once(__DIR__ . '/components/header.php');
+include_once(__DIR__ . '/components/public/header.php');
 ?>
 
 <section class="img1">
@@ -64,5 +64,5 @@ include_once(__DIR__ . '/components/header.php');
 </section>
 
 <?php
-include_once(__DIR__ . '/components/footer.php');
+include_once(__DIR__ . '/components/public/footer.php');
 ?>

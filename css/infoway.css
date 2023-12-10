@@ -134,6 +134,40 @@ h1 {
 
 /* Cursos */
 
+.btn{
+    padding: 10px 38px;
+    background-color: #f4732a;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    transition: 1s;
+    color: #fff;
+    cursor: pointer;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.btn:hover{
+    transition: 1s;
+    background-color: #e25c0f;
+    color: #fff;
+}
+
+/* Imagens do curso */
+
+.cursoimg{
+    display: flex;
+    justify-content: center;
+}
+.curso-img{
+    width: 150px;
+    height: 150px;
+}
+
+/* Cards e textos Sobre */
+
 .card-curs{
     margin: auto;
     justify-content: center;
