@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-4">
                 <h5 class="mb-4"><i class="bi bi-person"></i> Contato</h5>
-                <p class="mb-1"><i class="bi bi-envelope-fill"></i> <a href="mailto:contato@infoway.com" class="text-light">contato@infoway.com</a></p>
+                <p class="mb-1"><i class="bi bi-envelope-fill"></i> <a href="mailto:contato@inforway.com" class="text-light">contato@inforway.com</a></p>
                 <p><i class="bi bi-telephone-fill"></i> (404) 4002-8922</p>
             </div>
             <div class="col-md-4">
@@ -25,7 +25,7 @@
 <footer class="mt-5 mb-2">
     <div class="footer">
     <p class="text-center"><i class="bi bi-pc-display"></i>
-        Infoway. © Todos os direitos reservados
+        Inforway. © Todos os direitos reservados
     </p>
     </div>
 </footer>

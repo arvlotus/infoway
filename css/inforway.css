@@ -70,7 +70,7 @@
 }
 
 .card-equipe {
-    width: 600px;
+    width: 590px;
     background-color: #f4732a;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -80,9 +80,8 @@
 }
 
 .imagex {
-    padding: 20px;
+    margin-left: 60px;
     flex: 1;
-
 }
 
 
@@ -172,7 +171,7 @@ h1 {
     margin: auto;
     justify-content: center;
     background-color: rgb(36, 36, 36);
-    width: 550px;
+    width: 400px;
     border-radius: 10px;
     margin-left: 50px;
     padding: 5px;
@@ -221,7 +220,7 @@ h1 {
     }
 
 body {
-    background-image: url('../css/Infoway/background.png');
+    background-image: url('../css/Inforway/background.png');
 }
 
 /* Footer */

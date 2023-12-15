@@ -41,7 +41,7 @@ include_once(__DIR__ . '/components/public/header.php');
   </div>
 </main>
 <div class="imagex">
-  <img src="css/Infoway/HTMLCSSJAVA.jpeg" alt="imgequipe" class="w-50" style="box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
+  <img src="css/Inforway/HTMLCSSJAVA.jpeg" alt="imgequipe" class="w-50" style="box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
 </div>
 
 <?php

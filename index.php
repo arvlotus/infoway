@@ -26,7 +26,7 @@ include_once(__DIR__ . '/components/public/header.php');
   </main>
 
   <div class="imageinicio p-3">
-    <img src="css/Infoway/INFORWAY.png" alt="logo" class="w-75">
+    <img src="css/Inforway/INFORWAY.png" alt="logo" class="w-75">
   </div>
 
 </div>
@@ -42,22 +42,22 @@ include_once(__DIR__ . '/components/public/header.php');
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="css/Infoway/HARDWARE.png" class="d-block w-100" alt="imagen1">
+        <img src="css/Inforway/HARDWARE.png" class="d-block w-100" alt="imagen1">
       </div>
       <div class="carousel-item">
-        <img src="css/Infoway/JAVASCRIPT.png" class="d-block w-100" alt="imagen2">
+        <img src="css/Inforway/JAVASCRIPT.png" class="d-block w-100" alt="imagen2">
       </div>
       <div class="carousel-item">
-        <img src="css/Infoway/PHP POO.png" class="d-block w-100" alt="imagen3">
+        <img src="css/Inforway/PHP POO.png" class="d-block w-100" alt="imagen3">
       </div>
       <div class="carousel-item">
-        <img src="css/Infoway/HTMLCSSJAVA.jpeg" class="d-block w-100" alt="imagen3">
+        <img src="css/Inforway/HTMLCSSJAVA.jpeg" class="d-block w-100" alt="imagen3">
       </div>
       <div class="carousel-item">
-        <img src="css/Infoway/INFORMÁTICA BÁSICA.png" class="d-block w-100" alt="imagen3">
+        <img src="css/Inforway/INFORMÁTICA BÁSICA.png" class="d-block w-100" alt="imagen3">
       </div>
       <div class="carousel-item">
-        <img src="css/Infoway/LÓGICA DE PROGRAMAÇÃO.png" class="d-block w-100" alt="imagen3">
+        <img src="css/Inforway/LÓGICA DE PROGRAMAÇÃO.png" class="d-block w-100" alt="imagen3">
       </div>
     </div>
   </div>
