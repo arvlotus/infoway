@@ -1,5 +1,12 @@
 <?php
-$currentPage = 'cursos';
+
+$pageInfo = array(
+ 'title' => 'Cadastro - Inforway',
+ 'description' => 'Cadastre-se no Inforway.',
+ 'pageName' => 'register',
+);
+
+$pageName = $pageInfo['pageName'];
 include_once(__DIR__ . '/components/public/header.php');
 ?>
 

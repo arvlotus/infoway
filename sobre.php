@@ -1,5 +1,12 @@
 <?php
-$currentPage = 'sobre';
+
+$pageInfo = array(
+ 'title' => 'Sobre - Inforway',
+ 'description' => 'Saiba mais sobre Inforway.',
+ 'pageName' => 'sobre',
+);
+
+$pageName = $pageInfo['pageName'];
 include_once(__DIR__ . '/components/public/header.php');
 ?>
 

@@ -1,13 +1,14 @@
 <?php
-function isActivepage($currentPage, $pageName)
-{
-  if ($currentPage == $pageName) {
-    return 'active';
-  }
-  return '';
-}
-?>
+session_start();
 
+if(!isset($_SESSION['user_id'])){
+    header('Location: ../login.php');
+}
+
+include_once('../helpers/database.php');
+$connection = connectDatabase();
+
+?>
 
 
 <!DOCTYPE html>
@@ -17,18 +18,22 @@ function isActivepage($currentPage, $pageName)
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    <?= $currentPage == 'index' ? 'Infoway - Pagina Inicial' : ''; ?>
-    <?= $currentPage == 'sobre' ? 'Infoway - Sobre' : ''; ?>
-    <?= $currentPage == 'cursos' ? 'Infoway - Cursos' : ''; ?>
-  </title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="./css/inforway.css">
+  <link rel="stylesheet" href="../css/inforway.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-
+  <?php
+    // Inclua as informações da página atual
+    if (isset($pageInfo)) {
+        echo "<title>{$pageInfo['title']}</title>";
+        echo "<meta name='description' content='{$pageInfo['description']}'>";
+    } else {
+        echo "<title>Inforway</title>";
+        echo "<meta name='description' content='Bem-vindo ao Inforway'>";
+    }
+    ?>
 </head>
 
 <nav class="navbar navbar-expand-lg bg-custom mb-5">
@@ -60,12 +65,21 @@ function isActivepage($currentPage, $pageName)
     </div>
     <div class="reglogin ml-auto">
       <form class="form-inline my-2 my-lg-0">
-        <a class="btn btn-custom" href="register.php">
-          Registre-se
+        <?php
+        if (!isset($_SESSION['user_id'])) {
+        ?>
+          <a class="btn btn-custom p-1" href="register.php">
+            Registre-se
+          </a>
+          <a class="btn btn-custom p-1" href="login.php">
+            Logar
+          </a>
+        <?php
+        } else { ?>
+          <a class="btn btn-custom p-1" href="admin/profile.php">
+            Dashboard
         </a>
-        <a class="btn btn-custom" href="register.php">
-          Logar
-        </a>
+        <?php } ?>
       </form>
     </div>
   </div>
