@@ -20,7 +20,7 @@ include_once(__DIR__ . '/components/public/header.php');
                 <div class="card-body">
                     <h2 class="text-center mb-4">Ops! Página não encontrada</h2>
                     <p class="text-center">A página que você está procurando pode ter sido removida ou está temporariamente indisponível.</p>
-                    <img src="css/Inforway/404.png" alt="Erro 404" class="img-fluid d-block mx-auto">
+                    <img src="css/Inforway/ERRO_404.png" alt="Erro 404" class="img-fluid d-block mx-auto">
                     <div class="text-center mt-3">
                         <a href="index.php" class="btn btn-color1">Voltar para a página inicial</a>
                     </div>

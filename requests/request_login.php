@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Usar prepared statements para proteger contra SQL injection
     $name = mysqli_real_escape_string($connection, $name);
     $email = mysqli_real_escape_string($connection, $email);
-    $cpf = mysqli_real_escape_string($connection, $cpf);
     $password= mysqli_real_escape_string($connection, $password);
 
     $query = "SELECT * FROM users WHERE email = '$email'";

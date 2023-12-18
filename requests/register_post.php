@@ -5,22 +5,22 @@ include_once ('../helpers/database.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
-    $cpf = $_POST['cpf'];
     $password = $_POST["password"];
+    $cpf = $_POST['cpf'];
 
     $connection = connectDatabase();
 
     // Usar prepared statements para proteger contra SQL injection
     $name = mysqli_real_escape_string($connection, $name);
     $email = mysqli_real_escape_string($connection, $email);
+    $password= mysqli_real_escape_string($connection, $password);
     $cpf = mysqli_real_escape_string($connection, $cpf);
-    $password = mysqli_real_escape_string($connection, $password);
-
+    
 
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
     $cpf_hashed = password_hash($cpf, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO users (name, email, cpf, password, level) VALUES ('$name', '$email', '$cpf_hashed', '$password_hashed', 'common')";
+    $query = "INSERT INTO users (name, email, password, cpf, level) VALUES ('$name', '$email', '$password_hashed', '$cpf_hashed', 'common')";
 
     if(mysqli_query($connection, $query)) {
         // Configurar a sessão
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['user_email'] = $email;
         $_SESSION['user_level'] = 'common';
 
-        // Redirecionar para admin/index.php
+        // Redirecionar para admin/profile.php
         header("Location: ../admin/profile.php");
         exit(); // Certifique-se de sair após o redirecionamento
     } else {
