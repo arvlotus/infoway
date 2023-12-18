@@ -35,54 +35,29 @@ $connection = connectDatabase();
     }
     ?>
 </head>
-
-<nav class="navbar navbar-expand-lg bg-custom mb-5">
-  <div class="container">
-    <a class="navbar-brand" href="index.php">
-      <img src="css/Inforway/INFORWAY.PNG" alt="logoinfo" width="55" height="50">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item <?php echo isActivepage($currentPage, 'index'); ?>">
-          <a class="nav-link active" href="index.php"><i class="bi bi-house p-2"></i>
-            Pagina Inicial
-          </a>
-        </li>
-        <li class="nav-item <?php echo isActivepage($currentPage, 'sobre'); ?>">
-          <a class="nav-link" href="sobre.php"><i class="bi bi-info"></i>
-            Sobre
-          </a>
-        </li>
-        <li class="nav-item <?php echo isActivepage($currentPage, 'cursos'); ?>">
-          <a class="nav-link" href="cursos.php"><i class="bi bi-book p-2"></i>
-            Cursos
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="reglogin ml-auto">
-      <form class="form-inline my-2 my-lg-0">
-        <?php
-        if (!isset($_SESSION['user_id'])) {
-        ?>
-          <a class="btn btn-custom p-1" href="register.php">
-            Registre-se
-          </a>
-          <a class="btn btn-custom p-1" href="login.php">
-            Logar
-          </a>
-        <?php
-        } else { ?>
-          <a class="btn btn-custom p-1" href="admin/profile.php">
-            Dashboard
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.php">
+            Inforway | Perfil
         </a>
-        <?php } ?>
-      </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user"></i> <?= $_SESSION['user_name'] ?? 'Usuário' ?>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="profile.php"><i class="fas fa-user"></i> Perfil</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out"></i> Sair</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 <body>

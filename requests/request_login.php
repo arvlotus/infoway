@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_level'] = $row['level'];
 
             // Redirecionar para o dashboard
-            header("Location: ../admin/index.php");
+            header("Location: ../admin/profile.php");
         }else{
             // Falar esta incorreta
             $_SESSION['login_error'] = 'Senha está incorreta';
