@@ -36,7 +36,7 @@ include_once(__DIR__ . '/components/public/header.php');
               <label for="password" class="form-label">Senha</label>
               <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            <button type="submit" class="btn btn-request btn-block">Entrar</button>
           </form>
 
           <div class="text-center mt-3">

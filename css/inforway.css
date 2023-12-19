@@ -35,6 +35,15 @@
 
 }
 
+/* Button do login e registra-se */
+
+.btnrequest{
+
+}
+
+.container-login{
+    background-color: rgb(36, 36, 36);
+}
 
 
 /* Sobre */
@@ -104,7 +113,7 @@ h1 {
 
 /* Sections do Index */
 
-.textinicio2 h1 {
+.btn-index h1 {
     color: #fff;
     font-family: 'Staatliches', sans-serif;
 }
@@ -115,11 +124,13 @@ h1 {
 }
 
 .imageinicio {
-    flex: 1 1 700px;
-    padding: 1, 5rem;
+    flex: 1;
 }
 
-.iniciofundo {
+.container-index {
+    border-radius: 1rem;
+    margin: auto;
+    width: 1300px;
     align-items: center;
     display: flex;
     background-color: #fff;
@@ -127,8 +138,17 @@ h1 {
 }
 
 .carouselfundo {
-    background-color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: rgba(36, 36, 36, 0.562);
+}
+
+.carousel-item{
+    border-radius: 1rem;
+}
+
+.ver-mais{
+    justify-content: center;
+    display: flex;
+    font-family: 'Staatliches', sans-serif;
 }
 
 /* Cursos */
@@ -171,7 +191,7 @@ h1 {
     margin: auto;
     justify-content: center;
     background-color: rgb(36, 36, 36);
-    width: 400px;
+    width: 550px;
     border-radius: 10px;
     margin-left: 50px;
     padding: 5px;
@@ -221,6 +241,8 @@ h1 {
 
 body {
     background-image: url('../css/Inforway/background.png');
+    background-repeat: no-repeat;
+    background-size: 200%;
 }
 
 /* Footer */
