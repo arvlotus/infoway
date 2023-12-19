@@ -37,9 +37,9 @@
 
 /* Button do login e registra-se */
 
-.btnrequest{
+/* .btnrequest{
 
-}
+} */
 
 .container-login{
     background-color: rgb(36, 36, 36);
@@ -125,6 +125,7 @@ h1 {
 
 .imageinicio {
     flex: 1;
+    margin-left: 200px;
 }
 
 .container-index {
@@ -224,9 +225,55 @@ h1 {
     margin: auto;
 }
 
+/* Register & Login */
 
+.card-body-reg{
+    background-color: rgb(36, 36, 36);
+}
+.card-regi{
+    width: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    bottom: 20px;
+    background-color: rgb(36, 36 ,36);
+}
+
+.card-regi label, h2, p, a{
+    color: #fff;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: 1s;
+    text-decoration: none;
+}
+a:hover{
+    color: #e96118;
+} 
 
 /* Index */
+
+.card-cursos ul, li{
+    color: #fff;
+}
+.card-cursos p{
+    text-align: center;
+    color: #fff;
+}
+.card-cursos h4{
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    color: #f4732a;
+}
+
+
+.card-cursos{
+    margin: auto;
+    background-color: rgb(36, 36, 36);
+    width: 250px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
 
 .textinicio2 h1{
     color: #f4732a;
@@ -243,6 +290,7 @@ body {
     background-image: url('../css/Inforway/background.png');
     background-repeat: no-repeat;
     background-size: 200%;
+    background-attachment: fixed;
 }
 
 /* Footer */
