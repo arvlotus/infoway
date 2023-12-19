@@ -87,7 +87,7 @@ include_once(__DIR__ . '/components/public/header.php');
       onde a cada clique uma nova porta se abre para possibilidades infinitas.<br> Estamos empolgados em tê-lo
       conosco nesta jornada eletrônica.</p>
     <form class="form-inline my-2 my-lg-0">
-      <a class="btn btn-custom mt-5 mb-3" href="register.php">
+      <a class="btn btn-custom mt-3 mb-3" href="register.php">
         Junte-se a nós
       </a>
     </form>

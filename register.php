@@ -11,7 +11,7 @@ include_once(__DIR__ . '/components/public/header.php');
 ?>
 
 <main class="container py-5">
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
       <div class="card-regi"
         <div class="card-body-reg">

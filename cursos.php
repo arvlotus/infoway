@@ -44,7 +44,7 @@ include_once(__DIR__ . '/components/public/header.php');
           Com o PowerPoint, você pode criar e gerenciar uma apresentação trabalhando com elementos gráficos
         </li>
       </ul>
-      <div class="button">
+      <div class="button mb-3">
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
@@ -83,7 +83,7 @@ include_once(__DIR__ . '/components/public/header.php');
           Com o PowerPoint, você pode criar e gerenciar uma apresentação trabalhando com elementos gráficos
         </li>
       </ul>
-      <div class="button">
+      <div class="button mb-3">
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
@@ -117,7 +117,7 @@ include_once(__DIR__ . '/components/public/header.php');
           Referências API Web, etc
         </li>
       </ul>
-      <div class="button">
+      <div class="button mb-3">
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
@@ -156,7 +156,7 @@ include_once(__DIR__ . '/components/public/header.php');
           <strong>Estruturas de Controle:</strong> Estudo de estruturas de controle de fluxo, incluindo condicionais (if, else) e loops (for, while), que controlam a execução de instruções com base em condições.
         </li>
       </ul>
-      <div class="button">
+      <div class="button mb-3">
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
@@ -200,7 +200,7 @@ include_once(__DIR__ . '/components/public/header.php');
           E muito mais...
         </li>
       </ul>
-      <div class="button">
+      <div class="button mb-3">
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
@@ -241,7 +241,7 @@ include_once(__DIR__ . '/components/public/header.php');
           E muito mais...
         </li>
       </ul>
-      <div class="button">
+      <div class="button mb-3">
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>

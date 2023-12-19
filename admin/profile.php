@@ -1,5 +1,4 @@
 <?php
-
 $pageInfo = array(
     'title' => 'Meu Perfil',
     'description' => 'Visualize e gerencie suas informações de perfil.',
@@ -8,100 +7,93 @@ $pageInfo = array(
 
 include_once('../components/admin/header.php');
 
-// Conecta-se ao banco de dados
-$connection = connectDatabase();
+$user_id = $_SESSION['user_id'];
 
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
+// Busca as informações do usuário logado no banco de dados
+$query = "SELECT * FROM users WHERE id = '$user_id'";
+$result = mysqli_query($connection, $query);
 
+// Verifica se a consulta retornou algum resultado
+if (mysqli_num_rows($result) > 0) {
+    // Transforma o resultado em um array associativo
+    $user = mysqli_fetch_assoc($result);
 
-    $query = "SELECT
-    name as user_name,
-    about as user_about,
-    image as user_image,
-    email as user_email
-    FROM users
-    WHERE id = '$user_id'";
-
-    $result = mysqli_query($connection, $query);
-
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $user_name = $row['user_name'];
-        $user_about = $row['user_about'];
-        $user_email = $row['user_email'];
-        $user_image = $row['user_image'];
-    } else {
-        // Se o post não existir, redirecione para uma página de erro ou para a lista de posts
-        header("Location: ../404.php");
-        exit();
-    }
+    // Atribui os valores do array às variáveis
+    $name = $user['name'];
+    $email = $user['email'];
+    $image = $user['image'];
 } else {
-    // Se não houver uma sessão de usuário, redirecione para a página de login
-    header("Location: ../login.php");
-    exit();
+    // Redireciona para a página de login
+    header('Location: login.php');
+    exit;
 }
 
-include_once('../components/admin/header.php');
+
 ?>
 
 <!-- Conteúdo da página de perfil -->
-<main class="container-profile">
+<main class="container-profile py-5">
+
     <div class="row">
         <!-- Informações do perfil -->
         <section class="col-md-4">
-            <div class="card-profile">
+            <div class="card-profile p-3">
                 <div class="card-body">
-                    <img src="<?php echo $user_image; ?>" alt="Foto de Perfil" class="img-fluid mb-3" alt="Foto de usuário" title="Foto de usuário">
+                    <?php
+                    // Verifica se a imagem do perfil contém o valor src 
+                    // (ou seja, se o usuário já fez upload de uma imagem)
+
+                    // Corrigido o caminho da imagem
+                    if (strpos($image, 'src') !== false) {
+                        $image = $image;
+                    ?>
+                        <img src="../<?php echo $image ?>" class="img-fluid mb-3" alt="<?php echo $name ?>">
+                    <?php } else { ?>
+                        <img src="<?php echo $image ?>" class="img-fluid mb-3" alt="<?php echo $name ?>">
+                    <?php } ?>
                     <h5>
-                        <?php echo $user_name; ?>
+                        <?php echo $name ?>
                     </h5>
                     <p>
-                        <?php echo $user_about; ?>
+                        <?php echo $email ?>
                     </p>
-                    <p>Email: <?php echo $user_email; ?></p>
                 </div>
             </div>
-            <div class="card-profile mt-3">
+            <div class="card mt-3">
                 <div class="card-body">
-                    <form action="requests/atualizar_perfil.php" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
-
+                    <form action="requests/profile/update.php" method="post" enctype="multipart/form-data">
+                        <?php if (isset($_SESSION['login_error'])) { ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $_SESSION['login_error']; ?>
+                            </div>
+                        <?php unset($_SESSION['login_error']);
+                        } ?>
                         <div class="form-group">
-                            <label for="image">Foto de usuário</label>
+                            <label for="image">Foto de Perfil</label>
                             <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+                            <input type="hidden" name="actual_image" value="<?php echo $image ?>">
                         </div>
-
                         <div class="form-group">
                             <label for="name">Nome</label>
-                            <input type="text" class="form-control" id="name" name="name" value="<?php echo $user_name ?>">
+                            <input type="text" class="form-control" id="name" value="<?php echo $name ?>" required name="name">
                         </div>
-
                         <div class="form-group">
                             <label for="email">Endereço de Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<?php echo $user_email ?>">
+                            <input type="email" class="form-control" id="email" value="<?php echo $email ?>" name="email" required>
                         </div>
-
-                        <div class="form-group">
-                            <label for="about">Sobre</label>
-                            <input type="about" class="form-control" id="about" name="about" value="<?php echo $user_about ?>">
-                        </div>
-
                         <div class="form-group">
                             <label for="password">Nova Senha</label>
                             <input type="password" class="form-control" id="password" name="password">
                         </div>
-
                         <div class="form-group">
-                            <label for="confirm_password">Confirme sua senha</label>
-                            <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                            <label for="password-confirm">Confirme a Nova Senha</label>
+                            <input type="password" class="form-control" id="password-confirm" name="password_confirm">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                     </form>
                 </div>
             </div>
-
         </section>
 
         <!-- Publicações e Comentários -->
