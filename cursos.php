@@ -24,7 +24,7 @@ include_once(__DIR__ . '/components/public/header.php');
         Informática básica:<br>Word, Excel & Powerpoint
       </h4>
       <div class="cursoimg">
-        <img class="curso-img mb-2" src="css/Inforway/ICONS/INFORMÁTICA BÁSICA.png" alt="informaticabasica">
+        <img class="curso-img mb-2" src="src/img/ICONS/INFORMÁTICA BÁSICA.png" alt="informaticabasica">
       </div>
       <p>
         A Informática básica te possibilita desenpenhar diferentes tarefas em diversos cargos.
@@ -62,7 +62,7 @@ include_once(__DIR__ . '/components/public/header.php');
         HTML5, CSS & JAVASCRIPT:
       </h4>
       <div class="cursoimg">
-        <img class="curso-img mb-2" src="css/Inforway/ICONS/HTML5.png" alt="informaticabasica">
+        <img class="curso-img mb-2" src="src/img/ICONS/HTML5.png" alt="informaticabasica">
       </div>
       <p>
         Neste curso, você irá aprender os fundamentos para trabalhar com o desenvolvimento para a Web,
@@ -101,7 +101,7 @@ include_once(__DIR__ . '/components/public/header.php');
         Java Script: Avançado
       </h4>
       <div class="cursoimg">
-        <img class="curso-img mb-2" src="css/Inforway/ICONS/JAVASCRIPT.png" alt="informaticabasica">
+        <img class="curso-img mb-2" src="src/img/ICONS/JAVASCRIPT.png" alt="informaticabasica">
       </div>
       <p>
         Javascript avançado é um dos conhecimentos mais desejados pelas empresas,
@@ -135,7 +135,7 @@ include_once(__DIR__ . '/components/public/header.php');
         Logica de programação: Iniciante
       </h4>
       <div class="cursoimg">
-        <img class="curso-img mb-2" src="css/Inforway/ICONS/LÓGICA DE PROGRAMAÇÃO.png" alt="informaticabasica">
+        <img class="curso-img mb-2" src="src/img/ICONS/LÓGICA DE PROGRAMAÇÃO.png" alt="informaticabasica">
       </div>
       <p>
         Neste curso, vamos apresentar conceitos de programação para você iniciar sua vida profissional em uma das áreas mais bem pagas atualmente,
@@ -174,7 +174,7 @@ include_once(__DIR__ . '/components/public/header.php');
         Hardware:
       </h4>
       <div class="cursoimg">
-        <img class="curso-img mb-2" src="css/Inforway/ICONS/HARDWARE.png" alt="informaticabasica">
+        <img class="curso-img mb-2" src="src/img/ICONS/HARDWARE.png" alt="informaticabasica">
       </div>
       <p>
         Neste curso, você irá aprender todo fundamento tecnico para instalação e reparos de dispositivos
@@ -218,7 +218,7 @@ include_once(__DIR__ . '/components/public/header.php');
         PHP e PHP POO
       </h4>
       <div class="cursoimg">
-        <img class="curso-img mb-2" src="css/Inforway/ICONS/PHP POO.png" alt="informaticabasica">
+        <img class="curso-img mb-2" src="src/img/ICONS/PHP POO.png" alt="informaticabasica">
       </div>
       <p>
         Aprenda a desenvolver explicação do web utilizando a função PHP.

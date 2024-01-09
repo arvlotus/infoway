@@ -322,7 +322,7 @@ li {
 }
 
 body {
-    background-image: url('../css/Inforway/background.png');
+    background-image: url('../src/img/background.png');
     background-repeat: no-repeat;
     background-size: 200%;
     background-attachment: fixed;
@@ -337,4 +337,6 @@ footer.row {
 
 footer.bg-custom {
     background-color: rgb(36, 36, 36);
+
 }
+
