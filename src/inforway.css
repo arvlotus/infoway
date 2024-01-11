@@ -37,19 +37,33 @@
 
 
 .container-login {
-    background-color: rgb(36, 36, 36);
+    background-color: #f4732a;
 }
 
 
 /* Profile */
 
-.card-profile {
+.btn-prf{
+    margin-top: 15px;
     background-color: #f4732a;
+}
+
+.card-profile {
+    width: 500px;
+    background-color: rgb(36, 36, 36);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 1rem;
-    width: 450px;
-    margin: auto;
-    margin-top: 10px;
+    border-radius: 8px;
+    padding: 20px;
+    bottom: 20px;
+}
+.card-body-profile {
+    color: #fff;
+    width: 500px;
+    background-color: rgb(36, 36, 36);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    bottom: 20px;
 }
 
 .buttonprofile{
@@ -171,9 +185,12 @@ h1 {
 
 /* Cursos */
 
+.btn-crs{
+    background-color: #cf7c00;
+}
+
 .btn {
     padding: 10px 38px;
-    background-color: #f4732a;
     font-weight: 500;
     font-size: 18px;
     border: none;
@@ -338,5 +355,16 @@ footer.row {
 footer.bg-custom {
     background-color: rgb(36, 36, 36);
 
+}
+
+/* Alunos */
+
+.card-alunos{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    bottom: 20px;
+    background-color: white;
 }
 

@@ -48,10 +48,10 @@ include_once(__DIR__ . '/components/public/header.php');
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
-          <a type="button" class="btn" href="login.php">Logar</a>
+          <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -87,10 +87,10 @@ include_once(__DIR__ . '/components/public/header.php');
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
-          <a type="button" class="btn" href="login.php">Logar</a>
+          <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -121,10 +121,10 @@ include_once(__DIR__ . '/components/public/header.php');
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
-          <a type="button" class="btn" href="login.php">Logar</a>
+          <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -160,10 +160,10 @@ include_once(__DIR__ . '/components/public/header.php');
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
-          <a type="button" class="btn" href="login.php">Logar</a>
+          <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -204,10 +204,10 @@ include_once(__DIR__ . '/components/public/header.php');
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
-          <a type="button" class="btn" href="login.php">Logar</a>
+          <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -245,10 +245,10 @@ include_once(__DIR__ . '/components/public/header.php');
         <?php
         if (!isset($_SESSION['user_id'])) {
         ?>
-          <a type="button" class="btn" href="login.php">Logar</a>
+          <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
         <?php
         }
         ?>
