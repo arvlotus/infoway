@@ -90,7 +90,7 @@ if (mysqli_num_rows($result) > 0) {
                             </div>
                             <div class="form-group">
                                 <label for="about">Sobre</label>
-                                <textarea class="form-control" id="about" rows="10" required name="about"><?php echo $about ?></textarea>
+                                <textarea class="form-control" id="about" rows="3" required name="about"><?php echo $about ?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="email">Endereço de Email</label>
