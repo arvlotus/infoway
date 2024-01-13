@@ -25,7 +25,7 @@
 <footer class="mt-5 mb-2">
     <div class="footer">
     <p class="text-center"><i class="bi bi-pc-display"></i>
-        Infor"way. © Todos os direitos reservados
+        Inforway. © Todos os direitos reservados
     </p>
     </div>
 </footer>

@@ -14,8 +14,8 @@ include_once(__DIR__ . '/components/public/header.php');
 <main class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
-      <div class="card shadow">
-        <div class="card-body">
+      <div class="card-regi">
+        <div class="card-body-reg">
           <h2 class="text-center mb-4">Bem-vindo de volta!</h2>
 
           <?php 
@@ -38,14 +38,13 @@ include_once(__DIR__ . '/components/public/header.php');
             </div>
             <button type="submit" class="btn btn-request btn-block">Entrar</button>
           </form>
-
           <div class="text-center mt-3">
-            <a href="cadastro.php">Não tem uma conta? Cadastre-se aqui.</a>
+            <p>Não tem uma conta? <a href="register.php">Cadastre-se aqui.</a></p>
           </div>
         </div>
-      </div>
-      <div class="text-center mt-3">
-        <a href="#">Esqueceu a senha?</a>
+        <div class="text-center mt-3">
+          <a href="#">Esqueceu a senha?</a>
+        </div>
       </div>
     </div>
   </div>

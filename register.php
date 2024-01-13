@@ -1,8 +1,8 @@
 <?php
 
  $pageInfo = array(
-  'title' => 'Cadastro - Chef em Casa',
-  'description' => 'Cadastre-se no Chef em Casa.',
+  'title' => 'Cadastro - Inforway',
+  'description' => 'Cadastre-se no Inforway.',
   'pageName' => 'register',
 );
 
@@ -13,8 +13,8 @@ include_once(__DIR__ . '/components/public/header.php');
 <main class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
-      <div class="card shadow">
-        <div class="card-body">
+      <div class="card-regi"
+        <div class="card-body-reg">
           <h2 class="text-center mb-4">Cadastre-se</h2>
           
           <!-- Formulário de Cadastro -->
