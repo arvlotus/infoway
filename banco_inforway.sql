@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Dez-2023 às 22:41
--- Versão do servidor: 10.4.32-MariaDB
--- versão do PHP: 8.0.30
+-- Tempo de geração: 14/01/2024 às 22:53
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,25 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `banco_de_dados`
+-- Banco de dados: `banco_inforway`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `comments`
+-- Estrutura para tabela `banners`
+--
+
+CREATE TABLE `banners` (
+  `id` int(11) NOT NULL,
+  `title` varchar(55) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `comments`
 --
 
 CREATE TABLE `comments` (
@@ -35,7 +47,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `comments`
+-- Despejando dados para a tabela `comments`
 --
 
 INSERT INTO `comments` (`id`, `content`, `user_id`, `post_id`) VALUES
@@ -53,7 +65,22 @@ INSERT INTO `comments` (`id`, `content`, `user_id`, `post_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `likes`
+-- Estrutura para tabela `courses`
+--
+
+CREATE TABLE `courses` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `likes`
 --
 
 CREATE TABLE `likes` (
@@ -63,7 +90,7 @@ CREATE TABLE `likes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `likes`
+-- Despejando dados para a tabela `likes`
 --
 
 INSERT INTO `likes` (`id`, `user_id`, `post_id`) VALUES
@@ -81,7 +108,7 @@ INSERT INTO `likes` (`id`, `user_id`, `post_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `posts`
+-- Estrutura para tabela `posts`
 --
 
 CREATE TABLE `posts` (
@@ -95,7 +122,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `posts`
+-- Despejando dados para a tabela `posts`
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `image`, `views`, `created_at`) VALUES
@@ -108,7 +135,7 @@ INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `image`, `views`, `cre
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `users`
+-- Estrutura para tabela `users`
 --
 
 CREATE TABLE `users` (
@@ -118,57 +145,80 @@ CREATE TABLE `users` (
   `image` varchar(255) NOT NULL DEFAULT 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain',
   `about` text NOT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `level` enum('common','admin') NOT NULL
+  `cpf` varchar(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `level` enum('student','admin','teacher') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `users`
+-- Despejando dados para a tabela `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `image`, `about`, `password`, `level`) VALUES
-(1, 'João Silva', 'joao.silva@gmail.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '123456', 'common'),
-(2, 'Maria Souza', 'maria.souza@hotmail.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '123456', 'common'),
-(3, 'Pedro Santos', 'pedro.santos@yahoo.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '123456', 'common'),
-(4, 'Ana Oliveira', 'ana.oliveira@outlook.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '123456', 'common'),
-(5, 'Lucas Costa', 'lucas.costa@gmail.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '123456', 'common');
+INSERT INTO `users` (`id`, `name`, `email`, `image`, `about`, `password`, `cpf`, `created_at`, `level`) VALUES
+(12, 'gabriel', 'gabriel@1.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '$2y$10$lb/LVYULD2O3S58hohfLUOoMGr.3FqdouC3.KGmJWh.UzYVOXwDAW', '$2y$10$2a/C', '2024-01-14 21:41:15', 'admin'),
+(13, 'alice', 'alice@alice.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '$2y$10$V65302t1SvpzUoo7D2YQs.uXK5gZd7t1Rs1b2FygFWFwH27ZvPdKO', '', '2024-01-14 21:49:39', 'student');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `comments`
+-- Índices de tabela `banners`
+--
+ALTER TABLE `banners`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `likes`
+-- Índices de tabela `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `likes`
 --
 ALTER TABLE `likes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `posts`
+-- Índices de tabela `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `users`
+-- Índices de tabela `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `banners`
+--
+ALTER TABLE `banners`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de tabela `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `likes`
@@ -186,7 +236,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
