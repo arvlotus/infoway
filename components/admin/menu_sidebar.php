@@ -27,7 +27,7 @@ include_once('../helpers/isActivePage.php');
         Minha área
     </span>
     <a href="profile.php" class="list-group-item list-group-item-action <?= isActivePage($currentPage, 'profile') ?>"><i class="bi bi-person-gear"></i> Perfil</a>
-    <a href="meucurso.php" class="list-group-item list-group-item-action <?= isActivePage($currentPage, 'profile') ?>"><i class="bi bi-journals"></i> Meus Cursos</a>
+    <a href="meucurso.php" class="list-group-item list-group-item-action <?= isActivePage($currentPage, 'course') ?>"><i class="bi bi-mortarboard"></i> Meus Cursos</a>
     <a href="posts.php" class="list-group-item list-group-item-action <?= isActivePage($currentPage, 'posts') ?>"><i class="bi bi-stickies"></i> Publicações</a>
 </div>
 

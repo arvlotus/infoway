@@ -56,6 +56,11 @@ include_once('helpers/isActivePage.php');
             Cursos
           </a>
         </li>
+        <li class="nav-item <?php echo isActivepage($currentPage, 'forum'); ?>">
+          <a class="nav-link" href="forum.php"><i class="bi bi-chat-left-text p-2"></i>
+            Fórum
+          </a>
+        </li>
       </ul>
     </div>
     <div class="reglogin ml-auto">
