@@ -8,29 +8,32 @@ $pageInfo = array(
 
 $pageName = $pageInfo['pageName'];
 include_once(__DIR__ . '/components/public/header.php');
+
+include_once('helpers/database.php');
+
+$connection = connectDatabase();
+
+$query ="SELECT * FROM banners";
+
+$result = mysqli_query($connection, $query);
+
+$banners = array();
+
+if (mysqli_num_rows($result) > 0) {
+  $banners = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
+
 ?>
 
-<div class="carouselfundo mt-5 mb-5">
+<div class="carouselfundo mb-5">
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="src/img/HARDWARE.png" class="d-block w-100" alt="imagen1">
+      <?php foreach($banners as $active => $banner): ?>
+      <div class="carousel-item <?= $active === 0 ? 'active' : ''; ?> ">
+        <img src="<?= $banner['image']; ?> " class="d-block mx-auto w-100" alt="imagen1">
       </div>
-      <div class="carousel-item">
-        <img src="src/img/HTMLCSSJAVA.jpeg" class="d-block w-100" alt="imagen3">
-      </div>
-      <div class="carousel-item">
-        <img src="src/img/JAVASCRIPT.png" class="d-block w-100" alt="imagen3">
-      </div>
-      <div class="carousel-item">
-        <img src="src/img/PHP POO.png" class="d-block w-100" alt="imagen3">
-      </div>
-      <div class="carousel-item">
-        <img src="src/img/INFORMÁTICA BÁSICA.png" class="d-block w-100" alt="imagen3">
-      </div>
-      <div class="carousel-item">
-        <img src="src/img/LÓGICA DE PROGRAMAÇÃO.png" class="d-block w-100" alt="imagen3">
-      </div>
+      <?php endforeach ?>
     </div>
   </div>
 </div>

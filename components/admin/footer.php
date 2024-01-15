@@ -21,6 +21,9 @@
                 <p class="small mb-1"><i class="far fa-bookmark"></i><i class="bi bi-buildings"></i> Mais de 10 unidades no RJ</p>
                 <p class="small"><i class="far fa-bookmark"></i><i class="bi bi-patch-check"></i> Reconhecida pelo MEC</p>
             </div>
+            <div class="col-md-4">
+                <img src="../../src/img/INFORWAY LOGO.png" alt="">
+            </div>
         </div>
 <footer class="mt-5 mb-2">
     <div class="footer">

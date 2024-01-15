@@ -31,7 +31,7 @@ include_once('helpers/isActivePage.php');
     ?>
 </head>
 
-<nav class="navbar navbar-expand-lg bg-custom mb-5">
+<nav class="navbar navbar-expand-lg bg-custom">
   <div class="container">
     <a class="navbar-brand" href="index.php">
       <img src="src/img/INFORWAY.PNG" alt="logoinfo" width="55" height="50">
