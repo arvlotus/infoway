@@ -51,7 +51,7 @@ include_once(__DIR__ . '/components/public/header.php');
           <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="pagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -90,7 +90,7 @@ include_once(__DIR__ . '/components/public/header.php');
           <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="pagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -124,7 +124,7 @@ include_once(__DIR__ . '/components/public/header.php');
           <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="pagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -163,7 +163,7 @@ include_once(__DIR__ . '/components/public/header.php');
           <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="pagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -207,7 +207,7 @@ include_once(__DIR__ . '/components/public/header.php');
           <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="pagamento.php">Comprar</a>
         <?php
         }
         ?>
@@ -248,7 +248,7 @@ include_once(__DIR__ . '/components/public/header.php');
           <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn btn-crs" href="teladepagamento.php">Comprar</a>
+          <a type="button" class="btn btn-crs" href="pagamento.php">Comprar</a>
         <?php
         }
         ?>
