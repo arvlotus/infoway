@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $content = $_POST['content'];
     $price = $_POST['price'];
+    $teacher = $_POST['teacher'];
 
     //  Configuração para o upload da imagem
     $targetDir = "../../src/img/courses/";
@@ -33,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $image = "src/img/courses/" . $randomName;
 
-        $query = "INSERT INTO courses (title, content, image, price) VALUES ('$title', '$content', '$image', '$price')";
+        $query = "INSERT INTO courses (title, content, image, price, teacher) VALUES ('$title', '$content', '$image', '$price', '$teacher')";
 
         if(mysqli_query($connection, $query)){
             $_SESSION['message'] = "Seu curso foi criado com sucesso";

@@ -1,9 +1,9 @@
 <?php
 
 $pageInfo = array(
- 'title' => 'Cadastro - Inforway',
- 'description' => 'Cadastre-se no Inforway.',
- 'pageName' => 'register',
+ 'title' => 'Cursos - Inforway',
+ 'description' => 'Cursos do Inforway.',
+ 'pageName' => 'courses',
 );
 
 $pageName = $pageInfo['pageName'];

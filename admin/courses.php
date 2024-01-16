@@ -60,6 +60,7 @@ if (mysqli_num_rows($result) > 0) {
                                 <th>Título</th>
                                 <th>Descrição</th>
                                 <th>Preço</th>
+                                <th>Professor</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -80,6 +81,9 @@ if (mysqli_num_rows($result) > 0) {
                                     </td>
                                     <td>
                                         <?php echo $course['price']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $course['teacher']; ?>
                                     </td>
                                     <td>
                                     <div class="dropdown">

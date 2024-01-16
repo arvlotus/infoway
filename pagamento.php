@@ -13,6 +13,16 @@ include_once ('helpers/database.php');
 
 $connection = connectDatabase();
 
+$query="SELECT * FROM courses";
+
+$result = mysqli_query($connection, $query);
+
+$courses = array();
+
+if (mysqli_num_rows($result) > 0){
+    $courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
 ?>
 
 <!-- Area de pagamento -->
@@ -43,12 +53,9 @@ $connection = connectDatabase();
                         <label for="courses">Selecione o Curso</label>
                         <select name="courses" id="courses" class="form-select" aria-label="Default select example">
                             <option selected>Selecione</option>
-                            <option value="curso1">PHP POO</option>
-                            <option value="curso2">JAVASCRIPT AVANÇADO</option>
-                            <option value="curso3">LÓGICA DA PROGAMAÇÃO</option>
-                            <option value="curso4">HARDAWARE</option>
-                            <option value="curso5">HTML, CSS, JAVA</option>
-                            <option value="curso6">INFORMÁTICA BÁSICA</option>
+                            <?php foreach($courses as $course){?>
+                            <option value="<?= $course['title']; ?>"><?= $course['title']; ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <label class="mb-3" for="cartão">Escolha a Bandeira do Seu Cartão:</label>
