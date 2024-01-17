@@ -24,7 +24,7 @@ include_once('../components/admin/header.php');
             <h2><?= $pageInfo['title'] ?></h2>
             <p><?= $pageInfo['description'] ?></p>
             <hr>
-            <div class="card">
+            <div class="card-alunos">
                 <div class="card-body">
                     <?php if(isset($_SESSION['message'])){ ?>
                         <div class="alert alert-<?= $_SESSION['message_type'] ?>" role="alert">
@@ -32,12 +32,12 @@ include_once('../components/admin/header.php');
                         </div>
                     <?php unset($_SESSION['message']); } ?>
                     <form action="requests/request_create_banners.php" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <label for="title">Título da Postagem</label>
                             <input type="text" class="form-control" id="title" name="title"
                                 placeholder="Insira o título da postagem">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <label for="image">Imagem da Postagem</label>
                             <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
                         </div>
