@@ -2,7 +2,7 @@
 $pageInfo = array(
     'title' => 'Meus Cursos',
     'description' => 'Visualize seus cursos ativos.',
-    'pageName' => 'mycourse',
+    'pageName' => 'mycourses',
 );
 
 include_once('../helpers/database.php');
@@ -14,12 +14,12 @@ $user_id = $_SESSION['user_id'];
 $connection = connectDatabase();
 
 $query = "SELECT
-            users.courses,
             courses.title as title,
             courses.content as content,
-            courses.image as image
-          FROM users
-          JOIN courses ON users.courses = courses.id
+            courses.image as image,
+            users.courses as user
+          FROM courses
+          JOIN users ON users.courses = courses.id
           WHERE users.id = '$user_id'";
 
 $result = mysqli_query($connection, $query);
@@ -44,8 +44,10 @@ if (mysqli_num_rows($result) > 0) {
             <h2><?= $pageInfo['title'] ?></h2>
             <p><?= $pageInfo['description'] ?></p>
             <div class="row">
-                <div class="card-curs col-md-9">
-                    <?php foreach ($mycourses as $mycourse) { ?>
+                <?php foreach ($mycourses as $mycourse) {
+                    if ($mycourse['user']> 0){  ?>
+                    
+                    <div class="card-curs col-md-9">
                         <h4>
                             <?php $mycourse['title']; ?>
                         </h4>
@@ -55,14 +57,17 @@ if (mysqli_num_rows($result) > 0) {
                         <p>
                             <?php $mycourse['content']; ?>
                         </p>
-                    <?php } ?>
-                    <div class="button mb-3">
-                        <a type="button" class="btn btn-crs" href="detalhes.php?course_id=<?= $course['id'] ?>">Detalhes</a>
+                        <div class="button mb-3">
+                            <a type="button" class="btn btn-crs" href="detalhes.php?course_id=<?= $course['id'] ?>">Detalhes</a>
+                        </div>
+                    <?php }
+                    } ?>
                     </div>
-                </div>
+            </div>
+        </section>
 </main>
 
 <?php
-$currentPage = 'courses';
+$currentPage = 'mycourses';
 include_once('../components/admin/footer.php');
 ?>
