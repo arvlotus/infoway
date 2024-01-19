@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/01/2024 às 22:53
+-- Tempo de geração: 19/01/2024 às 17:51
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `banners` (
   `id` int(11) NOT NULL,
   `title` varchar(55) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL
+  `image` varchar(225) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -70,10 +71,35 @@ INSERT INTO `comments` (`id`, `content`, `user_id`, `post_id`) VALUES
 
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
+  `title` varchar(50) DEFAULT NULL,
+  `content` varchar(225) DEFAULT NULL,
+  `image` varchar(225) DEFAULT NULL,
+  `price` varchar(225) NOT NULL,
+  `teacher` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `courses`
+--
+
+INSERT INTO `courses` (`id`, `title`, `content`, `image`, `price`, `teacher`) VALUES
+(4, 'Hardware', 'asdasd', 'src/img/courses/65a6a4ee0c3e9_HARDWARE.png', '$225', ''),
+(5, 'Lógica Progamação', 'asdasd', 'src/img/courses/65a6a501e9bb5_LÓGICA DE PROGRAMAÇÃO.png', '$225,00', ''),
+(6, 'Informática Basica', 'dasdasd', 'src/img/courses/65a6a5172d31f_INFORMÁTICA BÁSICA.png', '$225,00', ''),
+(7, 'Javascript Avançado', '123123', 'src/img/courses/65a6a52db1ac9_JAVASCRIPT.png', '$225,00', ''),
+(8, 'HTML CSS JAVA', '12123', 'src/img/courses/65a6a53b9b6cb_HTMLCSSJAVA.jpeg', '$225,00', ''),
+(9, 'PHP POO', '123123', 'src/img/courses/65a6a548866fd_PHP POO.png', '$225,00', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `icons`
+--
+
+CREATE TABLE `icons` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `content` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `price` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -135,6 +161,26 @@ INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `image`, `views`, `cre
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `purchases`
+--
+
+CREATE TABLE `purchases` (
+  `id` int(11) NOT NULL,
+  `user_id` varchar(255) NOT NULL,
+  `course_id` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `purchases`
+--
+
+INSERT INTO `purchases` (`id`, `user_id`, `course_id`) VALUES
+(11, '15', 'Informática Basica'),
+(12, '15', 'Javascript Avançado');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `users`
 --
 
@@ -145,7 +191,7 @@ CREATE TABLE `users` (
   `image` varchar(255) NOT NULL DEFAULT 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain',
   `about` text NOT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `cpf` varchar(11) NOT NULL,
+  `cpf` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `level` enum('student','admin','teacher') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -155,8 +201,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `image`, `about`, `password`, `cpf`, `created_at`, `level`) VALUES
-(12, 'gabriel', 'gabriel@1.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '$2y$10$lb/LVYULD2O3S58hohfLUOoMGr.3FqdouC3.KGmJWh.UzYVOXwDAW', '$2y$10$2a/C', '2024-01-14 21:41:15', 'admin'),
-(13, 'alice', 'alice@alice.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '$2y$10$V65302t1SvpzUoo7D2YQs.uXK5gZd7t1Rs1b2FygFWFwH27ZvPdKO', '', '2024-01-14 21:49:39', 'student');
+(15, 'Gabriel', 'gabriel@1.com', 'src/img/profile/307181519_181964981062869_3980220049479438323_n.png', '484848', '$2y$10$FgeRqA9Nr6NZhE0L8VDcierNkEUOSbSpdAPuYNvBY03QN5CGUGFsq', 0, '2024-01-13 17:18:01', 'admin'),
+(16, 'Alice', 'alice@alice.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '$2y$10$7L7u62H4cebMUabW0hHYEu3wGtdcpBONfPFy3IGIeHDz4pEyVjGQW', 0, '2024-01-13 17:18:16', 'teacher');
 
 --
 -- Índices para tabelas despejadas
@@ -181,6 +227,12 @@ ALTER TABLE `courses`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `icons`
+--
+ALTER TABLE `icons`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `likes`
 --
 ALTER TABLE `likes`
@@ -190,6 +242,12 @@ ALTER TABLE `likes`
 -- Índices de tabela `posts`
 --
 ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `purchases`
+--
+ALTER TABLE `purchases`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -206,7 +264,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `comments`
@@ -218,7 +276,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT de tabela `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de tabela `icons`
+--
+ALTER TABLE `icons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `likes`
@@ -233,10 +297,16 @@ ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de tabela `purchases`
+--
+ALTER TABLE `purchases`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
