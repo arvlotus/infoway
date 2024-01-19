@@ -13,14 +13,8 @@ $user_id = $_SESSION['user_id'];
 
 $connection = connectDatabase();
 
-$query = "SELECT
-            courses.title as title,
-            courses.content as content,
-            courses.image as image,
-            users.courses as user
-          FROM courses
-          JOIN users ON users.courses = courses.id
-          WHERE users.id = '$user_id'";
+// Selecionar cursos comprados pelo usuário
+$query = "SELECT * FROM purchases";
 
 $result = mysqli_query($connection, $query);
 
@@ -44,26 +38,18 @@ if (mysqli_num_rows($result) > 0) {
             <h2><?= $pageInfo['title'] ?></h2>
             <p><?= $pageInfo['description'] ?></p>
             <div class="row">
-                <?php foreach ($mycourses as $mycourse) {
-                    if ($mycourse['user']> 0){  ?>
-                    
-                    <div class="card-curs col-md-9">
-                        <h4>
-                            <?php $mycourse['title']; ?>
-                        </h4>
-                        <div class="cursoimg">
-                            <img class="curso-img mb-2" src=" <?php $mycourse['image']; ?> " alt="informaticabasica">
+                <?php foreach ($mycourses as $mycourse) { ?>
+                    <div class="col-md-4">
+                        <div class="card-mycourse">
+                            <h4><?= $mycourse['course_id']; ?></h4>
+                            <div class="button mb-3">
+                                <a type="button" class="btn btn-crs" href="detalhes.php?course_id=<?= $mycourse['id'] ?>">Detalhes</a>
+                            </div>
                         </div>
-                        <p>
-                            <?php $mycourse['content']; ?>
-                        </p>
-                        <div class="button mb-3">
-                            <a type="button" class="btn btn-crs" href="detalhes.php?course_id=<?= $course['id'] ?>">Detalhes</a>
-                        </div>
-                    <?php }
-                    } ?>
                     </div>
+                <?php } ?>
             </div>
+
         </section>
 </main>
 

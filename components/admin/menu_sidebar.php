@@ -46,6 +46,7 @@ if ($_SESSION['user_level'] == 'admin') {
         <a href="student.php" class="list-group-item list-group-item-action <?= isActivePage($currentPage, 'student') ?>"><i class="bi bi-people"></i> Gerenciar Alunos</a>
         <a href="courses.php" class="list-group-item list-group-item-action <?= isActivePage($currentPage, 'courses') ?>"><i class="bi bi-journals"></i> Gerenciar Cursos</a>
         <a href="banners.php" class="list-group-item list-group-item-action <?= isActivePage($currentPage, 'banners') ?>"><i class="bi bi-images"></i> Gerenciar Banners</a>
+        <a href="icons.php" class="list-group-item list-group-item-action <?= isActivePage($currentPage, 'icons') ?>"><i class="bi bi-exposure"></i> Gerenciar Icones</a>
     </div>
 <?php
 }

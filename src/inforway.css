@@ -372,6 +372,19 @@ footer.bg-custom {
     background-color: white;
 }
 
+/* Card my course */
+
+.card-mycourse{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    bottom: 20px;
+    background-color: white;
+    text-align:center;
+}
+
+
 /* Tela de pagamento */
 .card-pay{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
