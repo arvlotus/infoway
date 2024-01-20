@@ -69,7 +69,7 @@ if (mysqli_num_rows($result) > 0) {
       <img class="curso-img mb-2" src="src/img/ICONS/INFORMÁTICA BÁSICA.png" alt="informaticabasica">
     </div>
     <p>
-      A Informática básica te possibilita desenpenhar diferentes tarefas em diversos cargos.
+    Curso de Informática Básica, projetado para fornecer a você as habilidades essenciais necessárias para navegar com confiança no mundo digital.
     </p>
   </div>
 </div>

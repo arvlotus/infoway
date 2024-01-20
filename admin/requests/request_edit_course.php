@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['message'] = 'Curso editado com sucesso.';
                     $_SESSION['message_type'] = 'success';
                 } else {
-                    $_SESSION['message'] = 'Erro ao editar o curso.';
+                    $_SESSION['message'] = 'Erro ao editar o curso: ' . mysqli_error($connection);
                     $_SESSION['message_type'] = 'danger';
                 }
             } else {
@@ -47,18 +47,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Se nenhuma nova imagem foi enviada, apenas atualize os dados do post no banco de dados
-        $query = "UPDATE courses SET title = '$title', '$content', WHERE id = '$course_id'";
+        $query = "UPDATE courses SET title = '$title', content = '$content' WHERE id = '$course_id'";
         if (mysqli_query($connection, $query)) {
             $_SESSION['message'] = 'Curso editado com sucesso.';
             $_SESSION['message_type'] = 'success';
         } else {
-            $_SESSION['message'] = 'Erro ao editar o curso.';
+            $_SESSION['message'] = 'Erro ao editar o curso: ' . mysqli_error($connection);
             $_SESSION['message_type'] = 'danger';
         }
     }
 
     // Redirecionar de volta para a página de edição ou para a lista de posts
-    header("Location: ../edit_course.php?course_id=$course_id");
+    header("Location: ../courses.php");
     exit();
 }
 ?>

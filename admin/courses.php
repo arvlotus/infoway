@@ -70,7 +70,7 @@ if (mysqli_num_rows($result) > 0) {
 
                                 <tr>
                                     <td>
-                                    <img src="../<?= $course['image']; ?>" alt="Imagem Existente" class="img-thumbnail mt-2"
+                                    <img src="../<?= $course['image']; ?>" alt="Imagem Existente" class="mt-2"
                                 style="max-width: 100px;">
                                     </td>
                                     <td>

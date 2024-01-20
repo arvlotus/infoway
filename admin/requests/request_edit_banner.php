@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Se nenhuma nova imagem foi enviada, apenas atualize os dados do post no banco de dados
-        $query = "UPDATE banners SET title = '$title', WHERE id = '$banner_id'";
+        $query = "UPDATE banners SET title = '$title' WHERE id = '$banner_id'";
         if (mysqli_query($connection, $query)) {
             $_SESSION['message'] = 'Banner editado com sucesso.';
             $_SESSION['message_type'] = 'success';
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirecionar de volta para a página de edição ou para a lista de posts
-    header("Location: ../edit_banner.php?banner_id=$banner_id");
+    header("Location: ../banners.php");
     exit();
 }
 ?>
