@@ -25,15 +25,17 @@
                 <p class="small"><i class="far fa-bookmark"></i><i class="bi bi-patch-check"></i> Reconhecida pelo MEC</p>
             </div>
         </div>
-<footer class="mt-5 mb-2">
-    <div class="footer">
-    <p class="text-center"><i class="bi bi-pc-display"></i>
-        Inforway. © Todos os direitos reservados
-    </p>
-    </div>
-</footer>
+        <footer class="mt-5 mb-2">
+            <div class="footer">
+                <p class="text-center"><i class="bi bi-pc-display"></i>
+                    Inforway. © Todos os direitos reservados
+                </p>
+            </div>
+        </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="../tinymce/tinymce.min.js"></script>
+        <script src="../script.js"></script>
+        </body>
 
-</body>
-</html>
+        </html>
