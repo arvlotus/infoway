@@ -42,9 +42,6 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="col-md-4">
                         <div class="card-mycourse">
                             <h4><?= $mycourse['course_id']; ?></h4>
-                            <div class="button mb-3">
-                                <a type="button" class="btn btn-crs" href="detalhes.php?course_id=<?= $mycourse['id'] ?>">Detalhes</a>
-                            </div>
                         </div>
                     </div>
                 <?php } ?>
