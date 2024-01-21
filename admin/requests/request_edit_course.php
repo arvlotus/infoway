@@ -8,6 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $course_id = $_POST["course_id"];
     $title = $_POST["title"];
     $content = $_POST["content"];
+    $price = $_POST["price"];
+    $teacher = $_POST["teacher"];
 
     $connection = connectDatabase();
 
@@ -32,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
                 $image_path = "src/img/courses" . basename($_FILES["image"]["name"]);
                 // Atualizar os dados do post no banco de dados
-                $query = "UPDATE courses SET title = '$title', content = '$content', image = '$image_path' WHERE id = '$course_id'";
+                $query = "UPDATE courses SET  title = '$title', content = '$content', price = '$price', teacher = '$teacher', image = '$image_path' WHERE id = '$course_id'";
                 if (mysqli_query($connection, $query)) {
                     $_SESSION['message'] = 'Curso editado com sucesso.';
                     $_SESSION['message_type'] = 'success';
@@ -47,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Se nenhuma nova imagem foi enviada, apenas atualize os dados do post no banco de dados
-        $query = "UPDATE courses SET title = '$title', content = '$content' WHERE id = '$course_id'";
+        $query = "UPDATE courses SET title = '$title', content = '$content', price = '$price', teacher = '$teacher' WHERE id = '$course_id'";
         if (mysqli_query($connection, $query)) {
             $_SESSION['message'] = 'Curso editado com sucesso.';
             $_SESSION['message_type'] = 'success';

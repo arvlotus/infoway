@@ -13,7 +13,15 @@ include_once ('helpers/database.php');
 
 $connection = connectDatabase();
 
-$query="SELECT * FROM courses";
+if (isset($_GET['course_id'])) {
+    $course_id = $_GET['course_id'];
+} else {
+    // Se nenhum ID foi fornecido, redirecione para uma página de erro ou para a lista de posts
+    header("Location: ../404.php");
+    exit();
+}
+
+$query="SELECT * FROM courses WHERE id = '$course_id'";
 
 $result = mysqli_query($connection, $query);
 
@@ -35,29 +43,30 @@ if (mysqli_num_rows($result) > 0){
                     Área de pagamento
                 </h2>
                 <form action="requests/request_buy.php" method="POST">
-
+                    <input type="hidden" name="courses" id="courses" value="<?php $course['title'];?>">
+                    
                     <div class="mb-3">
                         <label for="number" class="form-label">Número do Cartão:</label>
                         <input type="text" class="form-control" style="width: 550px;" id="number" name="number" required>
                     </div>
-
+                    
                     <div class="mb-3">
                         <label for="number" class="form-label">CVC:</label>
                         <input type="text" class="form-control" style="width: 200px; display: inline-block;" id="number" name="number" required>
-
+                        
                         <label for="validade" class="form-label">Validade:</label>
                         <input type="month" style="width: 200px; display: inline-block;" class="form-control" id="validade" name="validade" required pattern="[0-9]{4}-[0-9]{2}" min="2024-01" max="2030-12">
                     </div>
-
+                    
                     <div class="mb-3">
-                        <label for="courses">Selecione o Curso</label>
-                        <select name="courses" id="courses" class="form-select" aria-label="Default select example">
-                            <option selected>Selecione</option>
-                            <?php foreach($courses as $course){?>
-                            <option value="<?= $course['title']; ?>"><?= $course['title']; ?></option>
+                        <?php foreach($courses as $course){?>
+                            <div class="mb-3">
+                                <label for="text" class="form-label">Valor: <?php echo $course['price']; ?> </label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="text" class="form-label">Professor: <?php echo $course['teacher']; ?> </label>
+                            </div>
                             <?php } ?>
-                        </select>
-                    </div>
                     <label class="mb-3" for="cartão">Escolha a Bandeira do Seu Cartão:</label>
                     <br>
                     <label class="mb-3">

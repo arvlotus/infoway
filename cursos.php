@@ -35,7 +35,7 @@ if (mysqli_num_rows($result) > 0){
   </div>
   <div class="row">
     <?php foreach($courses as $course) { ?>
-    <div class="card-curs col-md-4">
+    <div class="card-curs col-md-4 mb-5">
       <h4>
         <?php echo $course['title']; ?>
       </h4>
@@ -50,7 +50,7 @@ if (mysqli_num_rows($result) > 0){
           <a type="button" class="btn btn-crs" href="login.php">Logar</a>
         <?php
         } else { ?>
-          <a type="button" class="btn btn-crs" href="pagamento.php?course_id=<?php echo $course['id']; ?>">Comprar</a>
+            <a type="button" class="btn btn-crs" href="pagamento.php?course_id=<?php echo $course['id']; ?>">Comprar</a>
         <?php
         }
         ?>

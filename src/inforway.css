@@ -362,6 +362,16 @@ footer.bg-custom {
 }
 
 /* Alunos */
+.card-alunos p{
+    color: #000;
+}
+.card-alunos ul{
+    color: #000;
+}
+.card-alunos li{
+    color: #000;
+}
+
 
 .card-alunos{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

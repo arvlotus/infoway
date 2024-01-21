@@ -15,7 +15,7 @@ if (isset($_GET['course_id'])) {
 $connection = connectDatabase();
 
 // Obtém os dados do post existente
-$query = "SELECT title, content, image FROM courses WHERE id = '$course_id'";
+$query = "SELECT title, content, image, price, teacher FROM courses WHERE id = '$course_id'";
 $result = mysqli_query($connection, $query);
 
 // Verifica se o post existe
@@ -23,6 +23,8 @@ if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
     $existing_title = $row['title'];
     $existing_content = $row['content'];
+    $existing_price = $row['price'];
+    $existing_teacher = $row['teacher'];
     $existing_image = $row['image'];
 } else {
     // Se o post não existir, redirecione para uma página de erro ou para a lista de posts
@@ -72,6 +74,18 @@ include_once('../components/admin/header.php');
                             <label for="content">Descrição do Curso</label>
                             <!-- Preenche o campo com o título existente -->
                             <textarea class="form-control" id="content" rows="5" required name="content"><?= $existing_content ?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Preço do Curso</label>
+                            <!-- Preenche o campo com o título existente -->
+                            <input type="text" class="form-control" id="price" name="price"
+                                value="<?= $existing_price?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Professor do Curso</label>
+                            <!-- Preenche o campo com o título existente -->
+                            <input type="text" class="form-control" id="teacher" name="teacher"
+                                value="<?= $existing_teacher?>">
                         </div>
                         <div class="form-group">
                             <label for="image">Imagem do Curso</label>
