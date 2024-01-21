@@ -178,7 +178,7 @@ include_once(__DIR__ . '/components/public/header.php');
                                 <?php if (isset($_SESSION['user_id'])) { ?>
                                     <?php if ($_SESSION['user_id'] == $comment['user_id']) { ?>
                                         <a href="requests/comments/delete_comment.php?comment_id=<?php echo $comment['id']; ?>&post_id=<?php echo $post_id; ?>" class="btn btn-sm btn-danger ml-2">
-                                            <i class="fas fa-trash"></i>
+                                            <i class="bi bi-trash-fill"></i>
                                         </a>
                                     <?php } ?>
                                 <?php } ?>
@@ -222,7 +222,7 @@ include_once(__DIR__ . '/components/public/header.php');
                                     <label for="comment">Comentário</label>
                                     <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Digite seu comentário" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-color1">Enviar</button>
+                                <button type="submit" class="btn btn-dark">Enviar</button>
                             </form>
                         <?php } ?>
                     </div>

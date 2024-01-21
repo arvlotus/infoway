@@ -92,7 +92,7 @@ if (mysqli_num_rows($result) > 0) {
                                                     </a></li>
                                                 <li><a class="dropdown-item" href="../post.php?post_id=<?php echo $post['id']; ?>" target="_blank">
                                                         <i class="bi bi-eye-fill"></i>
-                                                        Ver no Blog
+                                                        Ver no Fórum
                                                     </a></li>
                                             </ul>
                                         </div>
