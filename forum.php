@@ -46,7 +46,7 @@ if (mysqli_num_rows($result) > 0) {
       <a type="button" class="btn btn-crs" href="login.php">Faça Login para criar uma Publicação</a>
     <?php
     } else { ?>
-      <a href="gitadmin/create_post.php" class="btn btn-success my-2 my-sm-0 text-light">
+      <a href="admin/create_post.php" class="btn btn-success my-2 my-sm-0 text-light">
         Criar nova publicação
       </a>
     <?php
@@ -66,6 +66,7 @@ if (mysqli_num_rows($result) > 0) {
         <table class="table table-hover table-striped">
           <thead>
             <tr>
+              <th>Foto</th>
               <th>Usuário</th>
               <th>Título</th>
               <th>Descrição</th>
@@ -78,6 +79,9 @@ if (mysqli_num_rows($result) > 0) {
             <?php foreach ($posts as $post) { ?>
 
               <tr>
+                <td>
+                <img src="<?php echo $post['user_image']; ?>" alt="<?php echo $post['user_name']; ?>" class="mr-3 img-fluid rounded-circle" style="width: 50px;">
+                </td>
                 <td>
                   <?php echo $post['user_name']; ?>
                 </td>
