@@ -371,6 +371,12 @@ footer.bg-custom {
 .card-alunos li{
     color: #000;
 }
+.card-alunos a{
+    color: #000;
+}
+.card-alunos:hover a{
+    color: #f4732a;;
+}
 
 .card-alunos{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -380,6 +386,7 @@ footer.bg-custom {
     bottom: 20px;
     background-color: #ffffff;
 }
+
 
 /* Card my course */
 
