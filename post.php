@@ -218,7 +218,7 @@ include_once(__DIR__ . '/components/public/header.php');
                                         Você está logado como <strong><?php echo $_SESSION['user_name']; ?></strong>.
                                     </p>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mb-5">
                                     <label for="comment">Comentário</label>
                                     <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Digite seu comentário" required></textarea>
                                 </div>

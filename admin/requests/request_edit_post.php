@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se uma nova imagem foi enviada
     if ($_FILES["image"]["size"] > 0) {
         // Processar o upload da nova imagem
-        $targetDir = "../../src/img/receitas";  // Substitua pelo diretório correto
+        $targetDir = "../../src/img/posts";  // Substitua pelo diretório correto
         $targetFile = $targetDir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Se tudo estiver ok, tentar fazer o upload
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-                $image_path = "src/img/receitas" . basename($_FILES["image"]["name"]);
+                $image_path = "src/img/posts" . basename($_FILES["image"]["name"]);
                 // Atualizar os dados do post no banco de dados
                 $query = "UPDATE posts SET title = '$title', content = '$content', image = '$image_path' WHERE id = '$post_id'";
                 if (mysqli_query($connection, $query)) {
