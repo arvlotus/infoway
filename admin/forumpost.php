@@ -1,8 +1,8 @@
 <?php
 $pageInfo = array(
-    'title' => 'Minhas Postagens',
-    'description' => 'Visualize e gerencie suas postagens.',
-    'pageName' => 'posts',
+    'title' => 'Postagens do Forum',
+    'description' => 'Visualize postagens do Fórum.',
+    'pageName' => 'forumposts',
 );
 
 include_once('../components/admin/header.php');
@@ -63,7 +63,6 @@ if (mysqli_num_rows($result) > 0) {
                                 <th>Foto</th>
                                 <th>Usuário</th>
                                 <th>Título</th>
-                                <th>Descrição</th>
                                 <th>Data de Publicação</th>
                                 <th>Ações</th>
                             </tr>
@@ -80,11 +79,11 @@ if (mysqli_num_rows($result) > 0) {
 
                                     // Corrigido o caminho da imagem
                                     if (strpos($post['user_image'], 'src') !== false) {
-                                        $image = $post['user_image'];
+                            
                                     ?>
-                                        <img src="../<?php echo $image ?>" class="mr-3 img-fluid rounded-circle" style="width: 50px;" alt="<?php echo $post['user_name'] ?>">
+                                        <img src="../<?php echo $post['user_image']; ?>" class="mr-3 img-fluid rounded-circle" style="width: 50px;" alt="<?php echo $post['user_name'] ?>">
                                     <?php } else { ?>
-                                        <img src="<?php echo $image ?>" class="mr-3 img-fluid rounded-circle" style="width: 50px;" alt="<?php echo $post['user_name'] ?>">
+                                        <img src="<?php echo $post['user_image']; ?>" class="mr-3 img-fluid rounded-circle" style="width: 50px;" alt="<?php echo $post['user_name'] ?>">
                                     <?php } ?>
                                     </td>
                                     <td>
@@ -93,16 +92,12 @@ if (mysqli_num_rows($result) > 0) {
                                     <td>
                                         <?php echo $post['title']; ?>
                                     </td>
-                                    <td>
-                                        <?php
-                                        echo $post['content'];
-                                        ?>
                                     </td>
                                     <td>
                                         <?php echo date('d/m/Y', strtotime($post['created_at'])); ?>
                                     </td>
                                     <td>
-                                        <a style="" href="post.php?post_id=<?php echo $post['post_id']; ?>" target="_blank">
+                                        <a style="" href="../post.php?post_id=<?php echo $post['post_id']; ?>" target="_blank">
                                             <i class="bi bi-eye-fill"></i>
                                             Ver no Fórum
                                         </a>

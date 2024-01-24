@@ -18,7 +18,7 @@ function is_author_post($post_id, $connection){
     return mysqli_num_rows($result) > 0;
 }
 
-if (is_author_post($post_id, $connection) || $user_level == 'admin') {
+if (is_author_post($post_id, $connection) || $user_level == 'Admin') {
     // Obtém o caminho do arquivo da imagem do post
     $query = "SELECT image FROM posts WHERE id = '$post_id'";
     $result = mysqli_query($connection, $query);

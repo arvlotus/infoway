@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/01/2024 às 23:53
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Tempo de geração: 24/01/2024 às 06:45
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,18 +33,6 @@ CREATE TABLE `banners` (
   `image` varchar(225) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `banners`
---
-
-INSERT INTO `banners` (`id`, `title`, `image`, `created_at`) VALUES
-(8, 'hardware', 'src/img/banners/65aeeb49d2844_HARDWARE.png', '2024-01-22 22:25:13'),
-(9, 'lógica de programação', 'src/img/banners/65aeeb5c2b874_LÓGICA DE PROGRAMAÇÃO.png', '2024-01-22 22:25:32'),
-(10, 'informática básica', 'src/img/banners/65aeeb6f125d3_INFORMÁTICA BÁSICA.png', '2024-01-22 22:25:51'),
-(11, 'javascript', 'src/img/banners/65aeeb7a6c0bd_JAVASCRIPT.png', '2024-01-22 22:26:02'),
-(12, 'html', 'src/img/banners/65aeeb8235d61_HTMLCSSJAVA.jpeg', '2024-01-22 22:26:10'),
-(13, 'phppoo', 'src/img/banners/65aeeb90528f3_PHP POO.png', '2024-01-22 22:26:24');
 
 -- --------------------------------------------------------
 
@@ -95,25 +83,12 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `title`, `content`, `image`, `price`, `teacher`) VALUES
-(4, 'Informática Básica', '<p>A Inform&aacute;tica b&aacute;sica te possibilita desenpenhar diferentes tarefas em diversos cargos.<br>Dessa forma voc&ecirc; aumenta as possibilidades no mercado de trabalho</p>\r\n<ul>\r\n<li>Com o Word, voc&ecirc; pode criar qualquer tipo de documento que envolva textos, quadrinhos, revistas, panfletos, jornais, etc.<br>Al&eacute;m disso, voc&ecirc; pode enriquecer o seu documento, utilizando tabelas, gr&aacute;ficos, imagens, &iacute;ndices e muitos outros recursos.</li>\r\n<li>Quando se trata de planilhas eletr&ocirc;nicas, o Excel &eacute;, sem d&uacute;vida, um dos programas mais utilizados no mundo!<br>Essa ferramenta &eacute; cheia de funcionalidades que facilitam muito o uso de c&aacute;lculos matem&aacute;ticos.</li>\r\n<li>Com o PowerPoint, voc&ecirc; pode criar e gerenciar uma apresenta&ccedil;&atilde;o trabalhando com elementos gr&aacute;ficos</li>\r\n</ul>', 'src/img/coursescoursesINFORMÁTICA BÁSICA.png', '$225', 'Homem-Aranha'),
-(5, 'Lógica Progamação', '<p>Neste curso, vamos apresentar conceitos de programa&ccedil;&atilde;o para voc&ecirc; iniciar sua vida profissional em uma das &aacute;reas mais bem pagas atualmente, incluindo uma introdu&ccedil;&atilde;o ao desenvolvimento de projetos profissionais utilizando a linguagem de programa&ccedil;&atilde;o com o conceito de orienta&ccedil;&atilde;o a objetos por meio da l&oacute;gica.</p>\r\n<pre class=\"a-b-r-La\">&nbsp;</pre>', 'src/img/coursescourses65ac24b661eaa_LÓGICA DE PROGRAMAÇÃO.png', '$225,00', 'Felipe Campos'),
-(6, 'Hardware', '<p>Neste curso, voc&ecirc; ir&aacute; aprender todo fundamento tecnico para instala&ccedil;&atilde;o e reparos de dispositivos de hardware e Software, e solu&ccedil;&otilde;es de problemas mais comuns.</p>\r\n<p>O que voc&ecirc; ir&aacute; aprender:</p>\r\n<ul>\r\n<li>Manuten&ccedil;&atilde;o preventiva e corretiva</li>\r\n<li>Bancada de teste com perif&eacute;ricos</li>\r\n<li>Formata&ccedil;&atilde;o e instala&ccedil;&atilde;o de sistemas</li>\r\n<li>Manuten&ccedil;&atilde;o preventiva e corretiva</li>\r\n<li>E muito mais...</li>\r\n</ul>', 'src/img/coursescoursescoursesHARDWARE.png', '$225,00', 'Homem de Ferro'),
-(7, 'Javascript Avançado', '<p class=\"a-b-r-La\">Javascript avan&ccedil;ado &eacute; um dos conhecimentos mais desejados pelas empresas, e elas est&atilde;o literalmente disputando por profissionais que saibam usa-lo. Ainda assim muitas empresas t&ecirc;m dificuldades em encontrar pessoas qualificadas.</p>\r\n<ul>\r\n<li>Poder&aacute; criar aplica&ccedil;&otilde;es web interativas e din&acirc;micas que podem ser acessadas por milh&otilde;es de pessoas em todo o mundo</li>\r\n<li>JavaScript aprofundado</li>\r\n<li>Refer&ecirc;ncias API Web, etc</li>\r\n</ul>', 'src/img/coursescoursesJAVASCRIPT.png', '$225,00', 'Gustavo Guanabara'),
-(8, 'HTML CSS JAVA', '<p class=\"a-b-r-La\">Neste curso, voc&ecirc; ir&aacute; aprender os fundamentos para trabalhar com o desenvolvimento para a Web, aprendendo a usar HTML, CSS e JavaScript para criar sites e aplicativos da Web, que s&atilde;o utilizados nos aplicativos nativos e executados em seu navegador de Internet.</p>\r\n<p class=\"a-b-r-La\">Voc&ecirc; conhecer&aacute; o b&aacute;sico de um website e ferramentas que usar&aacute; para iniciar o desenvolvimento Web para trabalhar digitalmente, de forma &aacute;gil e segura. Os conhecimentos obtidos neste curso ser&atilde;o muito importantes para que voc&ecirc; possa ter um contexto para tomar decis&otilde;es sobre como construir seu site!</p>', 'src/img/coursescoursesHTML5.png', '$225,00', 'Superman'),
-(9, 'PHP POO', '<p>Aprenda a desenvolver explica&ccedil;&atilde;o do web utilizando a fun&ccedil;&atilde;o PHP. &Eacute; um curso indicado para quem deseja iniciar um carreira na &aacute;rea de programa&ccedil;&atilde;o, com uma linguagem de facil aprendizagem.&nbsp;<br>A POO promove a reutiliza&ccedil;&atilde;o de c&oacute;digo, modularidade, legibilidade e manutenibilidade do c&oacute;digo, sendo suportada pela linguagem PHP dentre outras.</p>\r\n<p>O que voc&ecirc; vai aprender:</p>\r\n<ul>\r\n<li>Estrutura de codigo</li>\r\n</ul>\r\n<ul>\r\n<li>Intera&ccedil;&atilde;o com banco de dados</li>\r\n</ul>\r\n<ul>\r\n<li>Linguagem de marca&ccedil;&atilde;o de conte&uacute;do</li>\r\n</ul>\r\n<ul>\r\n<li>E muito mais...</li>\r\n</ul>', 'src/img/coursescoursesPHP POO.png', '$225,00', 'Fabiano Costa');
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `icons`
---
-
-CREATE TABLE `icons` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(10, 'Hardware', '<p>\r\nNeste curso, você irá aprender todo fundamento tecnico para instalação e reparos de dispositivos\r\nde hardware e Software, e soluções de problemas mais comuns.\r\n</p>\r\n<p>\r\nO que você irá aprender:\r\n</p>\r\n      <ul>\r\n        <li>\r\n          Manutenção preventiva e corretiva\r\n        </li>\r\n        <li>\r\n          Bancada de teste com periféricos\r\n        </li>\r\n        <li>\r\n          Formatação e instalação de sistemas\r\n        </li>\r\n        <li>\r\n          Manutenção preventiva e corretiva\r\n        </li>\r\n        <li>\r\n          E muito mais...\r\n        </li>\r\n      </ul>', 'src/img/coursesHARDWARE.png', 'R$457,99', 'Nietzche'),
+(11, 'Lógica de Progamação', '<p>\r\n        Neste curso, vamos apresentar conceitos de programação para você iniciar sua vida profissional em uma das áreas mais bem pagas atualmente,\r\n        incluindo uma introdução ao desenvolvimento de projetos profissionais utilizando a linguagem de programação\r\n        com o conceito de orientação a objetos por meio da lógica.\r\n      </p>\r\n      <p>\r\n        O que você vai aprender:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          <strong>Algoritmos:</strong> Aprendizado sobre algoritmos, que são sequências de passos bem definidos para realizar uma tarefa ou resolver um problema.\r\n        </li>\r\n        <li>\r\n          <strong>Variáveis e Tipos de Dados:</strong> Compreensão de como armazenar e manipular dados usando variáveis e tipos de dados, como inteiros, números de ponto flutuante, strings,\r\n        </li>\r\n        <li>\r\n          <strong>Estruturas de Controle:</strong> Estudo de estruturas de controle de fluxo, incluindo condicionais (if, else) e loops (for, while), que c', 'src/img/courses/65ac24b661eaa_LÓGICA DE PROGRAMAÇÃO.png', '$225,00', 'Felipe Campos'),
+(12, 'Informática Básica', '<p>\r\n        Curso de Informática Básica, projetado para fornecer a você as habilidades essenciais necessárias para navegar com confiança no mundo digital. \r\n      </p>\r\n      <p>\r\n        O que você vai aprender:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          <strong>Introdução à Informática</strong> Entenda o que é informática e sua importância na sociedade moderna.\r\nFamiliarize-se com os componentes básicos de um computador.\r\nExplore diferentes tipos de dispositivos, desde desktops até dispositivos móveis.\r\n        </li>\r\n        <li>\r\n          <strong>Sistema Operacional:</strong> Aprenda a utilizar sistemas operacionais comuns, como Windows e Linux.\r\nNavegue pelo ambiente de trabalho e gerencie arquivos de forma eficiente.\r\nPersonalize configurações para atender às suas preferências.\r\n        </li>\r\n        <li>\r\n          <strong>Navegação na Internet:</strong> Explore os fundamentos da navegação na web.\r\nUtilize motores de busca para encontrar informações relevantes.\r\nCompree', 'src/img/courses/65ac24f400102_INFORMÁTICA BÁSICA.png', '$219,99', 'Majin Boo'),
+(13, 'Javascript Avançado', '<p>\r\n        Javascript avançado é um dos conhecimentos mais desejados pelas empresas,\r\n        e elas estão literalmente disputando por profissionais que saibam usa-lo.\r\n        Ainda assim muitas empresas têm dificuldades em encontrar pessoas qualificadas.</p>\r\n      <ul>\r\n        <li>\r\n          Poderá criar aplicações web interativas e dinâmicas que podem ser acessadas por milhões de pessoas em todo o mundo</li>\r\n        <li>\r\n          JavaScript aprofundado\r\n        </li>\r\n        <li>\r\n          Referências API Web, etc\r\n        </li>\r\n      </ul>', 'src/img/courses/65ac25221edbe_JAVASCRIPT.png', '$375,99', 'Superman'),
+(14, 'PHP POO', '<p>\r\n        Aprenda a desenvolver explicação do web utilizando a função PHP.\r\n        É um curso indicado para quem deseja iniciar um carreira na área de programação,\r\n        com uma linguagem de facil aprendizagem. <br> A POO promove a reutilização de código, modularidade,\r\n        legibilidade e manutenibilidade do código, sendo suportada pela linguagem PHP dentre outras.\r\n      </p>\r\n      <p>O que você vai aprender: </p>\r\n      <ul>\r\n        <li>\r\n          Estrutura de codigo\r\n        </li>\r\n        <li>\r\n          Interação com banco de dados\r\n        </li>\r\n        <li>\r\n          Linguagem de marcação de conteúdo\r\n        </li>\r\n        <li>\r\n          E muito mais...\r\n        </li>\r\n      </ul>', 'src/img/courses/65ac255655e26_PHP POO.png', 'R$552,00', 'Matheus Teixeira'),
+(15, 'HTML, CSS, Java', '<p>\r\n        Neste curso, você irá aprender os fundamentos para trabalhar com o desenvolvimento para a Web,\r\n        aprendendo a usar HTML, CSS e JavaScript para criar sites e aplicativos da Web,\r\n        que são utilizados nos aplicativos nativos e executados em seu navegador de Internet.\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Com o Word, você pode criar qualquer tipo de documento que envolva textos, quadrinhos, revistas, panfletos,\r\n          jornais, etc. Além disso, você pode enriquecer o seu documento, utilizando tabelas, gráficos, imagens, índices\r\n          e muitos outros recursos.\r\n        </li>\r\n        <li>\r\n          Quando se trata de planilhas eletrônicas, o Excel é, sem dúvida, um dos programas mais utilizados no mundo!\r\n          Essa ferramenta é cheia de funcionalidades que facilitam muito o uso de cálculos matemáticos.\r\n        </li>\r\n        <li>\r\n          Com o PowerPoint, você pode criar e gerenciar uma apresentação trabalhando com elementos gráficos\r\n', 'src/img/courses/65ac26282d453_HTML5.png', '$225,00', 'Abacate');
 
 -- --------------------------------------------------------
 
@@ -164,12 +139,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `title`, `content`, `image`, `views`, `created_at`) VALUES
-(1, 1, 'Como fazer um bolo de cenoura', 'Misture os ingredientes e asse por 30 minutos.', '', 0, '2023-12-12 21:40:31'),
-(2, 2, 'Dicas para estudar melhor', 'Faça resumos e revise o conteúdo com frequência.', '', 0, '2023-12-12 21:40:31'),
-(3, 3, 'Receita de pão caseiro', 'Misture a farinha, o fermento e a água e deixe descansar por 1 hora.', '', 0, '2023-12-12 21:40:31'),
-(4, 4, 'Como organizar sua rotina de trabalho', 'Faça uma lista de tarefas e priorize as mais importantes.', '', 0, '2023-12-12 21:40:31'),
-(5, 5, 'Dicas para cuidar das plantas', 'Regue as plantas regularmente e coloque-as em um local com luz solar.', '', 0, '2023-12-12 21:40:31'),
-(7, 15, 'Testando Curso', '<p>Testando Post</p>', 'src/img/posts/65aef11b47541_courses65ac24b661eaa_LÓGICA DE PROGRAMAÇÃO.png', 0, '2024-01-22 22:50:03');
+(11, 16, '123', '<p>123</p>', '', 0, '2024-01-24 05:30:18');
 
 -- --------------------------------------------------------
 
@@ -198,7 +168,7 @@ CREATE TABLE `users` (
   `password` varchar(255) DEFAULT NULL,
   `cpf` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `level` enum('student','admin','teacher') NOT NULL
+  `level` enum('Aluno','Admin','Professor') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -206,8 +176,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `image`, `about`, `password`, `cpf`, `created_at`, `level`) VALUES
-(15, 'Gabriel', 'gabriel@1.com', 'src/img/profile/307181519_181964981062869_3980220049479438323_n.png', '484848', '$2y$10$FgeRqA9Nr6NZhE0L8VDcierNkEUOSbSpdAPuYNvBY03QN5CGUGFsq', 0, '2024-01-13 17:18:01', 'admin'),
-(16, 'Alice', 'alice@alice.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '$2y$10$7L7u62H4cebMUabW0hHYEu3wGtdcpBONfPFy3IGIeHDz4pEyVjGQW', 0, '2024-01-13 17:18:16', 'teacher');
+(15, 'Gabriel', 'gabriel@1.com', 'src/img/profile/6O7a0Y2.png', '484848', '$2y$10$hL76cqzZtBMI3Gozm0setOTTLsNDdDkSi7odqcgwrRaUk0i/txcoO', 0, '2024-01-13 17:18:01', 'Admin'),
+(16, 'Alice', 'alice@alice.com', 'https://th.bing.com/th/id/OIP.e0Pn4g0z3Xwpa3wmRmifDgAAAA?rs=1&pid=ImgDetMain', '', '$2y$10$1ptnDJsEoIdYqb/ljdSlSu.VdvknH19uz0ZUYb1vUdElMfzKtQOzK', 0, '2024-01-13 17:18:16', 'Aluno');
 
 --
 -- Índices para tabelas despejadas
@@ -229,12 +199,6 @@ ALTER TABLE `comments`
 -- Índices de tabela `courses`
 --
 ALTER TABLE `courses`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `icons`
---
-ALTER TABLE `icons`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -269,7 +233,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `comments`
@@ -281,13 +245,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT de tabela `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT de tabela `icons`
---
-ALTER TABLE `icons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `likes`
@@ -299,13 +257,13 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `users`

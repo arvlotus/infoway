@@ -62,7 +62,6 @@ if (mysqli_num_rows($result) > 0) {
               <th>Foto</th>
               <th>Usuário</th>
               <th>Título</th>
-              <th>Descrição</th>
               <th>Data de Publicação</th>
               <th>Ações</th>
             </tr>
@@ -80,11 +79,6 @@ if (mysqli_num_rows($result) > 0) {
                 </td>
                 <td>
                   <?php echo $post['title']; ?>
-                </td>
-                <td>
-                  <?php
-                  echo $post['content']
-                  ?>
                 </td>
                 <td>
                   <?php echo date('d/m/Y', strtotime($post['created_at'])); ?>

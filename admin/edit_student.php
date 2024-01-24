@@ -68,8 +68,8 @@ include_once('../components/admin/header.php');
                             <label for="level">Nivel de Usuário</label>
                             <select class="form-select" aria-label="Default select example" id="level" name="level" style="width: 200px;" >
                                 <option selected>Selecione</option>
-                                <option value="student">Aluno</option>
-                                <option value="teacher">Professor</option>
+                                <option value="aluno">Aluno</option>
+                                <option value="professor">Professor</option>
                                 <option value="admin">Administrador</option>
                             </select>
                         </div>

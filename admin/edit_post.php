@@ -15,7 +15,7 @@ if (isset($_GET['post_id'])) {
 $connection = connectDatabase();
 
 // Obtém os dados do post existente
-$query = "SELECT title, content, image FROM posts WHERE id = '$post_id'";
+$query = "SELECT title, content FROM posts WHERE id = '$post_id'";
 $result = mysqli_query($connection, $query);
 
 // Verifica se o post existe
@@ -23,7 +23,6 @@ if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
     $existing_title = $row['title'];
     $existing_content = $row['content'];
-    $existing_image = $row['image'];
 } else {
     // Se o post não existir, redirecione para uma página de erro ou para a lista de posts
     header("Location: ../404.php");
@@ -73,13 +72,6 @@ include_once('../components/admin/header.php');
                             <!-- Preenche a área de texto com o conteúdo existente -->
                             <textarea class="form-control" id="content" name="content" rows="6"
                                 placeholder="Escreva o conteúdo da postagem"><?= $existing_content ?></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="image">Imagem da Postagem</label>
-                            <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
-                            <!-- Exibe a imagem existente para referência -->
-                            <img src="../<?= $existing_image ?>" alt="Imagem Existente" class="img-thumbnail mt-2"
-                                style="max-width: 200px;">
                         </div>
                         <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                     </form>

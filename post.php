@@ -44,20 +44,6 @@ WHERE comments.post_id = '$post_id'";
 $comments = mysqli_query($connection, $queryComments);
 
 // Busca posts do mesmo autor ou, caso não tenha nenhum, busca posts aleatórios do banco
-$querySimilarPosts = "SELECT
-    posts.id as id,
-    posts.title as title,
-    posts.image as image,
-    posts.created_at as created_at,
-    users.name as user_name,
-FROM posts
-JOIN users ON users.id = posts.user_id
-WHERE posts.user_id = (SELECT user_id FROM posts WHERE id = '$post_id')
-OR posts.id != '$post_id'
-LIMIT 3";
-
-// Execução da query para buscar posts relacionados
-$similar_posts = mysqli_query($connection, $querySimilarPosts);
 
 // Verifica se retornou algo
 if (mysqli_num_rows($result) > 0) {

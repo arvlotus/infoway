@@ -39,10 +39,6 @@ $connection = connectDatabase();
                             <textarea style class="form-control" id="content" name="content" rows="6"
                                 placeholder="Escreva o conteúdo da postagem"></textarea>
                         </div>
-                        <div class="form- mt-5 mb-3">
-                            <label for="image">Imagem da Postagem</label>
-                            <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
-                        </div>
                         <button type="submit" class="btn btn-primary">Publicar</button>
                     </form>
                 </div>

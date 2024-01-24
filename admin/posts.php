@@ -1,14 +1,14 @@
 <?php
 $pageInfo = array(
-    'title' => 'Minhas Postagens',
-    'description' => 'Visualize e gerencie suas postagens.',
+    'title' => 'Todas as Postagens',
+    'description' => 'Visualize e gerencie todas as postagens.',
     'pageName' => 'posts',
 );
 
 include_once('../components/admin/header.php');
 
 
-$query = "SELECT * FROM posts WHERE user_id = " . $_SESSION['user_id'];
+$query = "SELECT * FROM posts";
 
 $result = mysqli_query($connection, $query);
 
@@ -50,7 +50,6 @@ if (mysqli_num_rows($result) > 0) {
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Imagem</th>
                                 <th>Título</th>
                                 <th>Descrição</th>
                                 <th>Data de Publicação</th>
@@ -62,9 +61,6 @@ if (mysqli_num_rows($result) > 0) {
                             <?php foreach ($posts as $post) { ?>
 
                                 <tr>
-                                    <td>
-                                        <img src="../<?= $post['image']; ?>" alt="Imagem do post" class="img-thumbnail mt-2" style="max-width: 200px;">
-                                    </td>
                                     <td>
                                         <?php echo $post['title']; ?>
                                     </td>
