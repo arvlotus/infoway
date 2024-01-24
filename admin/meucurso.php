@@ -14,7 +14,7 @@ $user_id = $_SESSION['user_id'];
 $connection = connectDatabase();
 
 // Selecionar cursos comprados pelo usuário
-$query = "SELECT * FROM purchases";
+$query = "SELECT * FROM purchases WHERE user_id = '$user_id'";
 
 $result = mysqli_query($connection, $query);
 

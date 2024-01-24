@@ -1,6 +1,6 @@
 tinymce.init({
     selector: '#content',
-    width: 800,
+    width: 930,
     height: 300,
     menubar: false
 });

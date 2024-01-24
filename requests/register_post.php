@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
     $cpf_hashed = password_hash($cpf, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO users (name, email, password, cpf, level) VALUES ('$name', '$email', '$password_hashed', '$cpf_hashed', 'student')";
+    $query = "INSERT INTO users (name, email, password, cpf, level) VALUES ('$name', '$email', '$password_hashed', '$cpf_hashed', 'Aluno')";
 
     if(mysqli_query($connection, $query)) {
         // Configurar a sessão
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Outras informações que você pode querer armazenar na sessão
         $_SESSION['user_name'] = $name;
         $_SESSION['user_email'] = $email;
-        $_SESSION['user_level'] = 'student';
+        $_SESSION['user_level'] = 'Aluno';
 
         // Redirecionar para admin/profile.php
         header("Location: ../admin/profile.php");

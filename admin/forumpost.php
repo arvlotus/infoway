@@ -8,7 +8,17 @@ $pageInfo = array(
 include_once('../components/admin/header.php');
 
 
-$query = "SELECT * FROM posts WHERE user_id = " . $_SESSION['user_id'];
+$query = "SELECT 
+    posts.id as post_id,
+    posts.title as title,
+    posts.content as content,
+    posts.image as image,
+    posts.created_at as created_at,
+    users.name as user_name,
+    users.about as user_about,
+    users.image as user_image
+FROM posts
+JOIN users ON users.id = posts.user_id";
 
 $result = mysqli_query($connection, $query);
 
@@ -50,7 +60,8 @@ if (mysqli_num_rows($result) > 0) {
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Imagem</th>
+                                <th>Foto</th>
+                                <th>Usuário</th>
                                 <th>Título</th>
                                 <th>Descrição</th>
                                 <th>Data de Publicação</th>
@@ -63,7 +74,21 @@ if (mysqli_num_rows($result) > 0) {
 
                                 <tr>
                                     <td>
-                                        <img src="../<?= $post['image']; ?>" alt="Imagem do post" class="img-thumbnail mt-2" style="max-width: 200px;">
+                                    <?php
+                                    // Verifica se a imagem do perfil contém o valor src 
+                                    // (ou seja, se o usuário já fez upload de uma imagem)
+
+                                    // Corrigido o caminho da imagem
+                                    if (strpos($post['user_image'], 'src') !== false) {
+                                        $image = $post['user_image'];
+                                    ?>
+                                        <img src="../<?php echo $image ?>" class="mr-3 img-fluid rounded-circle" style="width: 50px;" alt="<?php echo $post['user_name'] ?>">
+                                    <?php } else { ?>
+                                        <img src="<?php echo $image ?>" class="mr-3 img-fluid rounded-circle" style="width: 50px;" alt="<?php echo $post['user_name'] ?>">
+                                    <?php } ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $post['user_name']; ?>
                                     </td>
                                     <td>
                                         <?php echo $post['title']; ?>
@@ -77,25 +102,10 @@ if (mysqli_num_rows($result) > 0) {
                                         <?php echo date('d/m/Y', strtotime($post['created_at'])); ?>
                                     </td>
                                     <td>
-                                        <div class="dropdown">
-                                            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <li><a style="color: #000;" class="dropdown-item" href="edit_post.php?post_id=<?php echo $post['id']; ?>">
-                                                <i class="bi bi-pencil-fill"></i>
-                                                        Editar
-                                                    </a></li>
-                                                <li><a class="dropdown-item text-danger" href="#" onclick="confirm('Você realmente deseja apagar essa publicação?') ? window.location.href='requests/request_delete_post.php?post_id=<?php echo $post['id']; ?>' : ''">
-                                                        <i class="bi bi-trash-fill"></i>
-                                                        Excluir
-                                                    </a></li>
-                                                <li><a style="color: #000;" class="dropdown-item" href="../post.php?post_id=<?php echo $post['id']; ?>" target="_blank">
-                                                        <i class="bi bi-eye-fill"></i>
-                                                        Ver no Fórum
-                                                    </a></li>
-                                            </ul>
-                                        </div>
+                                        <a style="" href="post.php?post_id=<?php echo $post['post_id']; ?>" target="_blank">
+                                            <i class="bi bi-eye-fill"></i>
+                                            Ver no Fórum
+                                        </a>
                                     </td>
                                 </tr>
                             <?php } ?>

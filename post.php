@@ -20,7 +20,8 @@ $query = "SELECT
     posts.created_at as created_at,
     users.name as user_name,
     users.about as user_about,
-    users.image as user_image
+    users.image as user_image,
+    users.level as user_level
 FROM posts
 JOIN users ON users.id = posts.user_id
 WHERE posts.id = '$post_id'";
@@ -48,7 +49,7 @@ $querySimilarPosts = "SELECT
     posts.title as title,
     posts.image as image,
     posts.created_at as created_at,
-    users.name as user_name
+    users.name as user_name,
 FROM posts
 JOIN users ON users.id = posts.user_id
 WHERE posts.user_id = (SELECT user_id FROM posts WHERE id = '$post_id')
@@ -71,6 +72,7 @@ if (mysqli_num_rows($result) > 0) {
     $user_name = $row['user_name'];
     $user_about = $row['user_about'];
     $user_image = $row['user_image'];
+    $user_level = $row['user_level'];
 } else {
     // Se não retornou nada, redireciona para a página 404
     header('Location: 404.php');
@@ -92,21 +94,43 @@ include_once(__DIR__ . '/components/public/header.php');
 
 <main class="container">
 
+
     <!-- Conteúdo do Post -->
     <section id="post" class="py-5">
         <div class="row">
-            <div class="col-md-8 card-alunos">
+            <!-- Seção sobre o Autor -->
+            <div class="col-md-2 card-alunos">
+                <div class="card-body">
+                    <div class="mt-4">
+                        <h3 class="text-center">Autor</h3>
+                        <div class="media text-center mt-4">
+                            <img src="<?php echo $user_image; ?>" alt="<?php echo $user_name; ?>" class="img-fluid rounded-circle" style="width: 100px;">
+                            <div class="media-body mt-3">
+                                <h4 class="text-center">
+                                    <?php echo $user_name; ?>
+                                </h4>
+                                <p>
+                                    <?php echo $user_about; ?>
+                                </p>
+                                <p>
+                                    <strong><span style="font-size: larger;"><?php echo $user_level; ?></span></strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 card-alunos">
                 <div class="card-body">
                     <!-- Conteúdo do post -->
-                    <img src="<?php echo $image; ?>" class="img-fluid" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
                     <h1 class="mt-4">
                         <?php echo $title; ?>
                     </h1>
-                    <p class="text-muted">
-                        <?php echo $date; ?>
-                    </p>
                     <p>
                         <?php echo $content; ?>
+                    </p>
+                    <p class="text-muted">
+                        <?php echo $date; ?>
                     </p>
                     <hr>
 
@@ -143,92 +167,82 @@ include_once(__DIR__ . '/components/public/header.php');
                             </a>
                         <?php } ?>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <!-- Seção sobre o Autor -->
-                    <div class="mt-4">
-                        <h3>Sobre o Autor</h3>
-                        <div class="media">
-                            <img src="<?php echo $user_image; ?>" alt="<?php echo $user_name; ?>" class="mr-3 img-fluid rounded-circle" style="width: 100px;">
+    </section>
+
+
+    <section class="comments">
+        <!-- Seção de Comentários -->
+        <div class="card-alunos">
+            <div class="card-body">
+                <div class="mt-4">
+                    <h3>Comentários</h3>
+                    <!-- Loop para exibir comentários -->
+                    <?php while ($comment = mysqli_fetch_assoc($comments)) { ?>
+                        <div class="media mt-4">
+                            <img src="<?php echo $comment['user_image']; ?>" class="mr-3 img-fluid rounded-circle" alt="<?php echo $comment['user_name']; ?>" style="width: 50px;">
                             <div class="media-body">
-                                <h4>
-                                    <?php echo $user_name; ?>
-                                </h4>
+                                <h6>
+                                    <?php echo $comment['user_name']; ?>
+                                </h6>
                                 <p>
-                                    <?php echo $user_about; ?>
+                                    <?php echo $comment['content']; ?>
                                 </p>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Seção de Comentários -->
-                    <div class="mt-4">
-                        <h3>Comentários</h3>
-                        <!-- Loop para exibir comentários -->
-                        <?php while ($comment = mysqli_fetch_assoc($comments)) { ?>
-                            <div class="media mt-4">
-                                <img src="<?php echo $comment['user_image']; ?>" class="mr-3 img-fluid rounded-circle" alt="<?php echo $comment['user_name']; ?>" style="width: 50px;">
-                                <div class="media-body">
-                                    <h6>
-                                        <?php echo $comment['user_name']; ?>
-                                    </h6>
-                                    <p>
-                                        <?php echo $comment['content']; ?>
-                                    </p>
-                                </div>
-                                <?php if (isset($_SESSION['user_id'])) { ?>
-                                    <?php if ($_SESSION['user_id'] == $comment['user_id']) { ?>
-                                        <a href="requests/comments/delete_comment.php?comment_id=<?php echo $comment['id']; ?>&post_id=<?php echo $post_id; ?>" class="btn btn-sm btn-danger ml-2">
-                                            <i class="bi bi-trash-fill"></i>
-                                        </a>
-                                    <?php } ?>
+                            <?php if (isset($_SESSION['user_id'])) { ?>
+                                <?php if ($_SESSION['user_id'] == $comment['user_id']) { ?>
+                                    <a href="requests/comments/delete_comment.php?comment_id=<?php echo $comment['id']; ?>&post_id=<?php echo $post_id; ?>" class="btn btn-sm btn-danger ml-2">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
                                 <?php } ?>
-                            </div>
-                        <?php } ?>
-                        <!-- Mensagem se não houver comentários -->
-                        <?php if (mysqli_num_rows($comments) == 0) { ?>
-                            <div class="alert alert-info">
-                                Nenhum comentário encontrado.
-                            </div>
-                        <?php } ?>
-                    </div>
-
-                    <!-- Formulário de Comentários -->
-                    <hr>
-                    <div class="mt-4">
-                        <h3>Deixe seu comentário</h3>
-
-                        <!-- Mensagem se o usuário não estiver logado -->
-                        <?php
-                        if (!isset($_SESSION['user_id'])) { ?>
-                            <div class="alert alert-info">
-                                Você precisa estar logado para comentar. <a href="login.php">Clique aqui</a> para
-                                fazer login em sua conta.
-                            </div>
-                        <?php } else { ?>
-                            <form action="requests/comments/create_comment.php" method="post">
-                                <?php if (isset($_SESSION['message'])) { ?>
-                                    <div class="alert alert-<?= $_SESSION['message_type'] ?>" role="alert">
-                                        <?php echo $_SESSION['message']; ?>
-                                    </div>
-                                <?php unset($_SESSION['message']);
-                                } ?>
-                                <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-                                <div class="form-group">
-                                    <p>
-                                        Você está logado como <strong><?php echo $_SESSION['user_name']; ?></strong>.
-                                    </p>
-                                </div>
-                                <div class="form-group mb-5">
-                                    <label for="comment">Comentário</label>
-                                    <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Digite seu comentário" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-dark">Enviar</button>
-                            </form>
-                        <?php } ?>
-                    </div>
-
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+                    <!-- Mensagem se não houver comentários -->
+                    <?php if (mysqli_num_rows($comments) == 0) { ?>
+                        <div class="alert alert-info">
+                            Nenhum comentário encontrado.
+                        </div>
+                    <?php } ?>
                 </div>
 
+                <!-- Formulário de Comentários -->
+                <hr>
+                <div class="mt-4">
+                    <h3>Deixe seu comentário</h3>
+
+                    <!-- Mensagem se o usuário não estiver logado -->
+                    <?php
+                    if (!isset($_SESSION['user_id'])) { ?>
+                        <div class="alert alert-info">
+                            Você precisa estar logado para comentar. <a href="login.php">Clique aqui</a> para
+                            fazer login em sua conta.
+                        </div>
+                    <?php } else { ?>
+                        <form action="requests/comments/create_comment.php" method="post">
+                            <?php if (isset($_SESSION['message'])) { ?>
+                                <div class="alert alert-<?= $_SESSION['message_type'] ?>" role="alert">
+                                    <?php echo $_SESSION['message']; ?>
+                                </div>
+                            <?php unset($_SESSION['message']);
+                            } ?>
+                            <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
+                            <div class="form-group">
+                                <p>
+                                    Você está logado como <strong><?php echo $_SESSION['user_name']; ?></strong>.
+                                </p>
+                            </div>
+                            <div class="form-group mb-5">
+                                <label for="comment">Comentário</label>
+                                <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Digite seu comentário" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark">Enviar</button>
+                        </form>
+                    <?php } ?>
+                </div>
             </div>
         </div>
     </section>

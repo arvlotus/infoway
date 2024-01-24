@@ -1,4 +1,25 @@
 <?php
+
+include_once('../helpers/database.php');
+
+if (isset($_GET['user_id'])) {
+    $user_id = $_GET['user_id'];
+}
+
+$connection = connectDatabase();
+
+// Obtém os dados do post existente
+$query = "SELECT name, email FROM users WHERE id = '$user_id'";
+
+$result = mysqli_query($connection, $query);
+
+// Verifica se o post existe
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $existing_name = $row['name'];
+    $existing_email = $row['email'];
+}
+
 $pageInfo = array(
     'title' => 'Editar Aluno Existente',
     'description' => 'Edite o aluno no sistema',
@@ -7,11 +28,6 @@ $pageInfo = array(
 
 include_once('../components/admin/header.php');
 
-if (isset($_GET['user_id'])) {
-    $user_id = $_GET['user_id'];
-}
-
-$connection = connectDatabase();
 
 ?>
 
@@ -36,11 +52,13 @@ $connection = connectDatabase();
                         <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                         <div class="form-group">
                             <label for="name">Nome</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Insira o nome">
+                            <input type="text" class="form-control" id="name" name="name"
+                            value="<?= $existing_name ?>">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Insira o email">
+                            <input type="email" class="form-control" id="email" name="email"
+                            value="<?= $existing_email ?>">
                         </div>
                         <div class="form-group">
                             <label for="password">Senha</label>

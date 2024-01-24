@@ -53,14 +53,7 @@ if (mysqli_num_rows($result) > 0) {
     }
     ?>
     <hr>
-
-    <?php if (isset($_SESSION['message'])) { ?>
-      <div class="alert alert-<?= $_SESSION['message_type'] ?>" role="alert">
-        <?php echo $_SESSION['message']; ?>
-      </div>
-    <?php unset($_SESSION['message']);
-    } ?>
-
+    
     <div class="card-alunos">
       <div class="card-body">
         <table class="table table-hover table-striped">
@@ -90,7 +83,7 @@ if (mysqli_num_rows($result) > 0) {
                 </td>
                 <td>
                   <?php
-                  echo substr($post['content'], 0, 120) . '...';
+                  echo $post['content']
                   ?>
                 </td>
                 <td>
