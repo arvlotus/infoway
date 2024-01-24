@@ -1,5 +1,4 @@
 <?php
-
 // Inclui o arquivo de conexão com o banco de dados
 include_once('helpers/database.php');
 
@@ -76,6 +75,7 @@ $pageName = $pageInfo['pageName'];
 
 // Inclui o cabeçalho da página
 include_once(__DIR__ . '/components/public/header.php');
+
 ?>
 
 <main class="container">
@@ -98,9 +98,27 @@ include_once(__DIR__ . '/components/public/header.php');
                                 <p>
                                     <?php echo $user_about; ?>
                                 </p>
-                                <p>
-                                    <strong><span style="font-size: larger;"><?php echo $user_level; ?></span></strong>
-                                </p>
+                                <?php
+                                if ($user_level == 'Admin') {
+                                ?>
+                                    <p>
+                                        <strong><span style="font-size: larger; color: #ed5e5e;"><?php echo $user_level; ?></span></strong>
+                                    </p>
+                                <?php
+                                } elseif ($user_level == 'Aluno') {
+                                ?>
+                                    <p>
+                                        <strong><span style="font-size: larger; color: #68ed75;"><?php echo $user_level; ?></span></strong>
+                                    </p>
+                                <?php
+                                } elseif ($user_level == 'Professor') {
+                                ?>
+                                    <p>
+                                        <strong><span style="font-size: larger; color: #4e51eb;"><?php echo $user_level; ?></span></strong>
+                                    </p>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

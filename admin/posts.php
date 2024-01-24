@@ -33,9 +33,6 @@ if (mysqli_num_rows($result) > 0) {
         <section class="col-md-9">
             <h2><?= $pageInfo['title'] ?></h2>
             <p><?= $pageInfo['description'] ?></p>
-            <a href="create_post.php" class="btn btn-success my-2 my-sm-0 text-light">
-                Criar nova postagem
-            </a>
             <hr>
 
             <?php if (isset($_SESSION['message'])) { ?>

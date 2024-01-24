@@ -34,7 +34,7 @@ $connection = connectDatabase();
                             <input type="text" class="form-control" id="title" name="title"
                                 placeholder="Insira o título da postagem">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="content">Conteúdo da Postagem</label>
                             <textarea style class="form-control" id="content" name="content" rows="6"
                                 placeholder="Escreva o conteúdo da postagem"></textarea>

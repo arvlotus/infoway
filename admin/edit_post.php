@@ -67,7 +67,7 @@ include_once('../components/admin/header.php');
                             <input type="text" class="form-control" id="title" name="title"
                                 value="<?= $existing_title ?>">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="content">Conteúdo da Postagem</label>
                             <!-- Preenche a área de texto com o conteúdo existente -->
                             <textarea class="form-control" id="content" name="content" rows="6"
